@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<title>Panini Comics - Panini Comics, Panini Manga</title>
+<meta name="description" content="Default Description" />
+<meta name="keywords" content="Magento, Varien, E-commerce" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+<link rel="shortcut icon" href="http://cdn62.paninicloud.com/store/media/favicon/default/favicon.ico" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://cdn62.paninicloud.com/store/js/blank.html';
+    var BLANK_IMG = 'http://cdn62.paninicloud.com/store/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="http://cdn62.paninicloud.com/store/skin/frontend/base/default/css/amasty/amlabel/amlabel.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://cdn62.paninicloud.com/store/skin/frontend/base/default/css/bubble/elasticsearch.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://cdn62.paninicloud.com/store/skin/frontend/base/default/pickuppoint/css/kiosks-select.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/css/Core.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/css/CustomProductStyles.css" media="all" />
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/lib/ccard.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/prototype/validation.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/scriptaculous/builder.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/scriptaculous/dragdrop.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/scriptaculous/slider.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/varien/js.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/varien/form.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/varien/menu.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/mage/translate.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/mage/cookies.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/amasty/amlabel/amlabel_observer.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/pickuppoint/pickuppoint.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/varien/weee.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/jQuery.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/Modernizr.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/Respond.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/Bootstrap.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/ThemeRoller.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/Cookie.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/checkascii.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/reclami.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/figurine-mancanti.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/ThemeRoller/default/js/google-tag-manager.js"></script>
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://cdn62.paninicloud.com/store/skin/frontend/base/default/css/styles-ie.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/js/lib/ds-sleight.js"></script>
+<script type="text/javascript" src="http://cdn62.paninicloud.com/store/skin/frontend/base/default/js/ie6.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/typo3conf/ext/themeroller/Resources/Public/Stylesheets/Extended/Colors/red.css"><link rel="stylesheet" href="/typo3conf/ext/themeroller/Resources/Public/Stylesheets/Extended/Backgrounds/comics.css">
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.comics.panini.com.mx';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["CL","HK","IE","MO","PA"];
+//]]>
+</script>
+<!-- jQuery LightBoxes -->
+<!-- //jQuery LightBoxes -->
+<script type="text/javascript">//<![CDATA[
+        var Translator = new Translate({"Please select an option.":"Por favor, seleccione una opci\u00f3n.","This is a required field.":"Campo requerido.","Please enter a valid number in this field.":"Por favor, escriba un n\u00famero v\u00e1lido en este campo.","Please use letters only (a-z or A-Z) in this field.":"Por favor, utilice s\u00f3lo letras (a-z o A-Z) en este campo.","Please enter a valid date.":"Por favor, escriba una fecha v\u00e1lida.","Please enter a valid email address. For example johndoe@domain.com.":"Por favor, escriba una direcci\u00f3n de correo v\u00e1lida. Por ejemplo perez@dominio.com","Please make sure your passwords match.":"Aseg\u00farese de que sus contrase\u00f1as coinciden.","Upload Security Error":"Error de seguridad en la subida","Upload HTTP Error":"Error de HTTP en la subida","Upload I\/O Error":"Error de I\/O en la subida","SSL Error: Invalid or self-signed certificate":"Error SSL: Certificado inv\u00e1lido o auto-firmado","You are now redirected to your account page, please update your address data":"Ahora est\u00e1 de nuevo a su p\u00e1gina de la cuenta, por favor, actualice sus datos de direcci\u00f3n","You are now redirected to the registration form":"Ahora est\u00e1 redirigido al formulario de inscripci\u00f3n","Cancel":"Cancelar"});
+        //]]></script>
+<script type="text/javascript">
+    //<![CDATA[
+    // http://stackoverflow.com/questions/19139063/twitter-bootstrap-3-dropdown-menu-disappears-when-used-with-prototype-js
+    (function() {
+        var isBootstrapEvent = false;
+        if (window.jQuery) {
+            var all = jQuery('*');
+            jQuery.each(['hide.bs.dropdown',
+                'hide.bs.collapse',
+                'hide.bs.modal',
+                'hide.bs.tooltip',
+                'hide.bs.popover'], function(index, eventName) {
+                all.on(eventName, function( event ) {
+                    isBootstrapEvent = true;
+                });
+            });
+        }
+        var originalHide = Element.hide;
+        Element.addMethods({
+            hide: function(element) {
+                if(isBootstrapEvent) {
+                    isBootstrapEvent = false;
+                    return element;
+                }
+                return originalHide(element);
+            }
+        });
+    })();
+    //]]>
+</script></head>
+<body class=" catalog-category-view categorypath-magazines-comics-html category-comics" id="store">
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Varien.searchForm) !== 'undefined') {
+    Varien.searchForm.prototype._selectAutocompleteItem = function(element) {
+        var link = element.down();
+        if (link && link.tagName == 'A') {
+            setLocation(link.href);
+        } else {
+            if (element.title){
+                this.field.value = element.title;
+            }
+            this.form.submit();
+        }
+    };
+    Varien.searchForm.prototype.initAutocomplete = function(url, destinationElement) {
+        new Ajax.Autocompleter(
+            this.field,
+            destinationElement,
+            url,
+            {
+                paramName: this.field.name,
+                method: 'get',
+                minChars: 2,
+                frequency: .1,
+                updateElement: this._selectAutocompleteItem.bind(this),
+                onShow : function(element, update) {
+                    if(!update.style.position || update.style.position=='absolute') {
+                        update.style.position = 'absolute';
+                        Position.clone(element, update, {
+                            setHeight: false,
+                            offsetTop: element.offsetHeight
+                        });
+                    }
+                    Effect.Appear(update,{duration:0});
+                }
+
+            }
+        );
+    };
+    Autocompleter.Base.prototype.markPrevious = function() {
+        if (this.index > 0) {
+            this.index--;
+        } else {
+            this.index = this.entryCount - 1;
+        }
+        var entry = this.getEntry(this.index);
+        if (entry.select('a').length === 0) {
+            this.markPrevious(); // Ignore items that don't have link
+        }
+    };
+    Autocompleter.Base.prototype.markNext = function() {
+        if (this.index < this.entryCount - 1) {
+            this.index++;
+        } else {
+            this.index = 0;
+        }
+        var entry = this.getEntry(this.index);
+        if (entry.select('a').length === 0) {
+            this.markNext(); // Ignore items that don't have link
+        } else {
+            entry.scrollIntoView(false);
+        }
+    };
+}
+//]]>
+</script>
+
+
+<script>dataLayer = [{"visitorId":"1492301","visitorLoginState":"Logged in","visitorType":"General","visitorLifetimeValue":398,"visitorExistingCustomer":"Yes"}];</script>
+
+<script>shopgoStoresDataLayer = [{"visitorId":"1492301","visitorLoginState":"Logged in","visitorType":"General","visitorLifetimeValue":398,"visitorExistingCustomer":"Yes"}];</script>
+
+
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PXS29D" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PXS29D');</script>
+
+<!-- End Google Tag Manager -->
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<header style="background-image: url(/typo3conf/ext/themeroller/Resources/Public/Images/Flags/header-mex.jpg)"> 
+	<div class="container hidden-xs"> 
+		<div class="country-selector-wrapper hidden"> 
+			<div class="country-selector"> 
+				<div class="continents-list"> <ul class="nav nav-pills"> <li class="active"><a href="#" rel="bra">Brazil</a></li> <li><a href="#" rel="deu">Deutschland / &Ouml;sterreich</a></li> <li><a href="#" rel="esp">Espa&ntilde;a</a></li> <li><a href="#" rel="fra">France</a></li> <li><a href="#" rel="ita">Italia</a></li> <li><a href="#" rel="mex">M&eacute;xico</a></li> <li><a href="#" rel="ned">Nederland</a></li> <li><a href="#" rel="tur">T&uuml;rkiye</a></li> <li><a href="#" rel="gbr">United Kingdom</a></li> <li class="close-btn btn btn-default"> <i class="fa fa-times"></i> <span class="sr-only">Close</span> </li> </ul> </div>
+				 
+				<div class="country-list-wrapper"> 
+					<div class="country-list" id="bra"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://www.paninicomics.com.br/">Panini Comics</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="deu"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://www.paninicomics.de/">Panini Comics</a> </li> <li> <a href="http://magazines.panini.de/">Panini Magazine</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="esp"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://espana.paninimagazine.com/">Panini Revistas</a> </li> <li> <a href="http://www.paninibooks.es/">Panini Books</a> </li> <li> <a href="http://paninicomics.es/">Panini Comics</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="fra"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://www.paninibooks.fr/">Panini Books</a> </li> <li> <a href="http://www.paninikids.fr/">Panini Kids - magazines fran&ccedil;ais</a> </li> <li> <a href="http://www.paninicomics.fr/">Panini Comics</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="ita"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://magazines.panini.it/">Panini Magazines</a> </li> <li> <a href="http://www.paninicomics.it/">Panini Comics</a> </li> <li> <a href="http://www.pandistribuzione.it/">Pan Distribuzione</a> </li> <li> <a href="http://www.topolino.it/">Topolino</a> </li> <li> <a href="http://www.abbonamentipanini.it/">Abbonamenti Panini Disney</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="mex"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://www.paninicomics.com.mx/">Panini Comics</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="ned"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://magazines.panininederland.com">Panini Magazines</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="tur"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://turkiye.paninimagazine.com/">Panini Magazines T&uuml;rkiye</a> </li> </ul> </div>
+					 
+					<div class="country-list hidden" id="gbr"> <ul class="nav nav-pills nav-justified"> <li> <a href="http://www.paninicomics.co.uk/">Panini Comics</a> </li> <li> <a href="http://www.paninisubscriptions.co.uk/">Panini Subscriptions</a> </li> </ul> </div>
+					 </div>
+				 </div>
+			 </div>
+		 
+		<div id="elements" class="row"> 
+			<div id="flagLogo" class="col-md-8"> 
+				<div class="col-sm-6 col-md-4 text-center"> <a class="HomeLink" id="HomeLink-Logo" href="http://comics.panini.com.mx/home.html"> <img src="http://comics.panini.com.mx/typo3conf/ext/themeroller/Resources/Public/Images/Logos/Panini_Comics.png" class="Panini_Comics"/> </a> </div>
+				 
+				<div class="col-sm-6 col-md-8"> 
+					<div class="col-xs-12 line-left"> <h3> <a class="HomeLink" id="HomeLink-Country" href="http://comics.panini.com.mx/home.html">México</a> </h3> </div>
+					 
+					<div class="col-xs-12 line-left"> 
+						<div class="special-menu line-top"><span class="first"> <a href="http://comics.panini.com.mx/home.html" title="Home" class="first">Home</a> </span> <span> <a href="http://comics.panini.com.mx/user.html" title="registration">Registro</a> </span> <span class="last"> <a href="http://crm.paninigroup.com/crm/commx/es-mx/stage" title="Contact us" class="last" target="_blank">Contactar</a> </span></div>
+						 </div>
+					 </div>
+				 </div>
+			 
+			<div class="col-md-4"> 
+				<div class="row line-bottom"> 
+					<div class="col-xs-6"> 
+						<div class="bt-row social-content"> <a href="https://www.facebook.com/PaniniComicsMX" target="_blank" title="Panini Facebook official page"> <i class="fa fa-fw fa-2x fa-facebook-square"></i><span class="sr-only">Facebook</span> </a> <a href="https://twitter.com/PaniniComicsMx" target="_blank" title="Panini Twitter official page"> <i class="fa fa-2x fa-twitter-square"></i><span class="sr-only">Twitter</span> </a> <a href="https://www.youtube.com/PaniniMexicoOficial" target="_blank" title="Panini YouTube official channel"> <i class="fa fa-2x fa-youtube-square"></i><span class="sr-only">YouTube</span> </a> </div>
+						 </div>
+					 
+					<div class="col-xs-6"> <button id="country-switcher" class="btn btn-link country-switcher"> <i class="fa fa-caret-right"></i> <span class="country-switch"> selecciona país </span> <img class="country-flag" src="http://comics.panini.com.mx/typo3conf/ext/themeroller/Resources/Public/Images/Flags/country-mex.png" width="28" height="22" alt="" /> </button> </div>
+					 </div>
+				 
+				<div class="row"> 
+					<div class="col-xs-9 line-right"> 
+						<div class="row"> 
+							<div class="col-xs-12"> <a class="btn btn-header btn-block" href="http://comics.panini.com.mx/busqueda.html"> <i class="fa fa-search fa-fw"> </i> <span>buscar</span> </a> </div>
+							 </div>
+						 
+						<div class="row"> 
+							<div class="col-xs-12"> <a class="btn btn-header btn-block" href="http://comics.panini.com.mx/user.html"> <i class="fa fa-sign-in fa-fw"></i> <span>Iniciar sesión</span> </a> </div>
+							 </div>
+						 </div>
+					 
+					<div class="col-xs-3"> 
+						<div id="mini-cart" class="squared"> <a class="btn btn-success" href="/store/pub_mex_es/checkout/cart"> <i class="fa fa-shopping-cart fa-2x"></i> <span id="mini-cart-qty" class="badge">0</span> </a> </div>
+						 <img class="passport-chip" alt="Panini Passport" src="http://comics.panini.com.mx/typo3temp/_processed_/csm_panini_group_chips_cb4e68e10b.png" width="90" height="34" /> </div>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </header>
+ <nav class="navbar navbar-website" role="navigation"> 
+	<div class="container"> 
+		<div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-navigation"> <span class="sr-only">Toggle navigation</span> <i class="fa-dot-circle-o fa"></i> </button> <a class="navbar-brand visible-xs" href="http://comics.panini.com.mx/"> <img src="http://comics.panini.com.mx/typo3conf/ext/themeroller/Resources/Public/Images/Logos/Panini.png" class="Panini"/> </a> </div>
+		 
+		<div class="collapse navbar-collapse" id="collapse-navigation"> <ul class="nav navbar-nav"> <li class="firstItem"> <a tabindex="100" href="http://comics.panini.com.mx/el-grupo-panini.html" class="firstItem" target="">El Grupo Panini</a> </li> <li class="dropdown"> <a tabindex="102" href="http://comics.panini.com.mx/tienda-online/catalogo-completo.html" class="dropdown-toggle" data-toggle="dropdown" target="">Tienda Online</a> <ul class="dropdown-menu" role="menu"> <li class="first"> <a tabindex="100" href="http://comics.panini.com.mx/store/pub_mex_es/magazines.html" class="first" target="">Catálogo completo</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html" class="" target="">Catálogo Panini Comics</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.com.mx/store/pub_mex_es/magazines/manga.html" class="" target="">Catálogo Panini Manga</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.com.mx/store/pub_mex_es/books.html" class="" target="">Catálogo Panini books</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.com.mx/store/pub_mex_es/partworks.html" class="" target="">Fascículos</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.com.mx/store/pub_mex_es/catalogsearch/advanced/" class="" target="">Búsqueda avanzada</a> </li> <li class="last"> <a tabindex="100" href="https://tiendapanini.com.mx/index.asp" class="last" target="">Suscripciones</a> </li> </ul> </li> <li class=""> <a tabindex="100" href="http://comics.panini.com.mx/atencion-al-cliente.html" class="" target="">Atención al cliente</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.com.mx/politicas-de-envio.html" class="" target="">Políticas de envío</a> </li> <li class="lastItem"> <a tabindex="100" href="https://tiendapanini.com.mx/index.asp" class="lastItem" target="_blank">Suscripciones</a> </li> <li class="visible-xs"> <a href="http://comics.panini.com.mx/user.html"> <i class="fa fa-sign-in"></i> <span> Iniciar sesión </span> </a> </li> <li class="visible-xs"> <a href="http://comics.panini.com.mx/store/pub_mex_es/checkout/cart"> <i class="fa fa-shopping-cart"></i> <span> Carro de compras </span> </a> </li> </ul> </div>
+		 </div>
+	 
+	<script>
+                (function ($) {
+                    $(document).ready(function () {
+                        $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            $(this).parent().siblings().removeClass('open');
+                            $(this).parent().toggleClass('open');
+                        });
+                    });
+                })(jQuery);
+            </script>
+	</nav>  
+<!-- ESI END DUMMY COMMENT [] -->
+<!-- nm-mods -->
+<!-- div role="main" class="main-container col2-right-layout container-fluid" -->
+    <section id="main-content" class="container">
+            <!-- nm-mods -->
+<ul class="breadcrumb">
+                    <li class="home">
+                            <a href="http://comics.panini.com.mx/store/pub_mex_es/" title="Ir a la página de Inicio">Inicio</a>
+                        <!--                 <span>/ </span>
+             -->
+            </li>
+                    <li class="category36">
+                            <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines.html" title="">Panini Comics, Panini Manga</a>
+                        <!--                 <span>/ </span>
+             -->
+            </li>
+                    <li class="category330">
+                            <strong>Panini Comics</strong>
+                        <!--  -->
+            </li>
+        </ul>
+        <div class="col-main col-md-9">
+            <!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+            
+<div class="page-title category-title">
+        <!-- nm-mods -->
+    <h2 class="page-header">Panini Comics</h2>
+    <!-- div class="divider"><hr/></div -->
+</div>
+
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+
+ 
+<div class="row"> 
+	<div id="content" role="main" class="col-lg-12 "> </div>
+	 </div>
+ 
+
+
+        <div class="category-products">
+            <div class="panel panel-pager">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <form class="limiter navbar-form navbar-left">
+                    <label>Mostrar</label> <select onchange="setLocation(this.value)">
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=5">
+                                5                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=10" selected="selected">
+                                10                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=15">
+                                15                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=20">
+                                20                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=25">
+                                25                            </option>
+                                            </select> por página                </form>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="list-pager navbar-left">
+                    <span class="navbar-text">Page:</span>
+                    
+    
+    
+    
+        <!-- div class="pages" -->
+        <!-- strong>Página:</strong -->
+        <ul class="pagination pagination-sm">
+        
+        
+        
+                                    <li class="current"><a href="#" class="disabled">1</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=2">2</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=3">3</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=4">4</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=5">5</a></li>
+                    
+        
+        
+                    <li>
+                <a class="next i-next" href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=2" title="Next">
+                                            <i class="fa fa-caret-right" alt="Next"></i>
+                                    </a>
+            </li>
+                </ul>
+
+    <!-- /div -->
+    
+    
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                                    <form class="navbar-form navbar-right">
+                                                    <p class="view-mode">
+                                                                                            </p>
+                        
+                        <div class="sort-by">
+                            <label>Ordenar por</label>
+                            <select onchange="setLocation(this.value)">
+                                                                                                                                                                                <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=name">
+                                            Título                                        </option>
+                                                                                                                                                <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=price">
+                                            Precio                                        </option>
+                                                                                                                                                <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=pnn_data_uscita" selected="selected">
+                                            DATE                                        </option>
+                                                                                                </select>
+                                                            <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=pnn_data_uscita" title="Configurar sentido ascendente">
+                                    <i class="fa fa-lg fa-fw fa-chevron-circle-down"></i>
+                                    <span class="sr-only">Configurar sentido ascendente</span>
+                                    <!-- img src="http://cdn62.paninicloud.com/store/skin/frontend/base/default/images/i_desc_arrow.gif" alt="Configurar sentido ascendente" class="v-middle"/ -->
+                                </a>
+                                                    </div>
+                    </form>
+                            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-center">
+                                    Artículos 1 a 10 de 489 totales                            </div>
+        </div>
+    </div>
+                                        <div id="products-list" class="list-group">
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qjojo008-mx-jojo-s-bizarre-adventure-jojo-s-bizarre-adventure-n-8.html" title="JOJO´S BIZARRE ADVENTURE N.8" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/J/QJOJO008_0.jpg" alt="JOJO´S BIZARRE ADVENTURE N.8"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qjojo008-mx-jojo-s-bizarre-adventure-jojo-s-bizarre-adventure-n-8.html" title="JOJO´S BIZARRE ADVENTURE N.8">JOJO´S BIZARRE ADVENTURE N.8</a>
+                                                                    <small class="subtitle lightText">
+                                        JOJO´S BIZARRE ADVENTURE N.8                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>JOJO´S BIZARRE ADVENTURE N.8</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qjojo008-mx-jojo-s-bizarre-adventure-jojo-s-bizarre-adventure-n-8.html"
+                                   title="JOJO´S BIZARRE ADVENTURE N.8"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73710" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-73710">
+                    <span class="price">$ 149.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/73710/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73710/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73710/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qmagp001hc-mx-america-s-got-powers-america-s-got-powers-hc-n-1.html" title="AMERICA´S GOT POWERS N.1" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/M/QMAGP001HC_0.jpg" alt="AMERICA´S GOT POWERS N.1"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qmagp001hc-mx-america-s-got-powers-america-s-got-powers-hc-n-1.html" title="AMERICA´S GOT POWERS N.1">AMERICA´S GOT POWERS N.1</a>
+                                                                    <small class="subtitle lightText">
+                                        AMERICA´S GOT POWERS N.1                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>AMERICA´S GOT POWERS N.1</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qmagp001hc-mx-america-s-got-powers-america-s-got-powers-hc-n-1.html"
+                                   title="AMERICA´S GOT POWERS N.1"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2014                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73554" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-73554">
+                    <span class="price">$ 289.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/73554/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73554/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73554/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qjuci001-mx-jupiter-s-circle-hc-jupiter-s-circle-vol-1-de-2-hc.html" title="JUPITER´S CIRCLE N.1" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/J/QJUCI001_0.jpg" alt="JUPITER´S CIRCLE N.1"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qjuci001-mx-jupiter-s-circle-hc-jupiter-s-circle-vol-1-de-2-hc.html" title="JUPITER´S CIRCLE N.1">JUPITER´S CIRCLE N.1</a>
+                                                                    <small class="subtitle lightText">
+                                        JUPITER´S CIRCLE N.1                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>REVISTAS</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qjuci001-mx-jupiter-s-circle-hc-jupiter-s-circle-vol-1-de-2-hc.html"
+                                   title="JUPITER´S CIRCLE N.1"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74035" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-74035">
+                    <span class="price">$ 229.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/74035/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/74035/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/74035/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qjuda001-mx-judas-hc-judas-hc-n-1.html" title="JUDAS(HC) N.1" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/J/QJUDA001_0.jpg" alt="JUDAS(HC) N.1"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qjuda001-mx-judas-hc-judas-hc-n-1.html" title="JUDAS(HC) N.1">JUDAS(HC) N.1</a>
+                                                                    <small class="subtitle lightText">
+                                        JUDAS(HC) N.1                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>JUDAS(HC) N.1</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qjuda001-mx-judas-hc-judas-hc-n-1.html"
+                                   title="JUDAS(HC) N.1"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73553" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-73553">
+                    <span class="price">$ 199.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/73553/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73553/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73553/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qmeta001-mx-dc-comics-anatomia-de-un-meta-dc-comics-anatomia-de-un-m.html" title="DC COMICS: ANATOMIA" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/M/QMETA001_0.jpg" alt="DC COMICS: ANATOMIA"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qmeta001-mx-dc-comics-anatomia-de-un-meta-dc-comics-anatomia-de-un-m.html" title="DC COMICS: ANATOMIA">DC COMICS: ANATOMIA</a>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>REVISTAS</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qmeta001-mx-dc-comics-anatomia-de-un-meta-dc-comics-anatomia-de-un-m.html"
+                                   title="DC COMICS: ANATOMIA"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73357" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-73357">
+                    <span class="price">$ 699.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/73357/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73357/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73357/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qswth001-mx-star-wars-thrawn-tpb-star-wars-thrawn-tpb-n-1.html" title="STAR WARS: THRAWN" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/S/QSWTH001_0.jpg" alt="STAR WARS: THRAWN"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qswth001-mx-star-wars-thrawn-tpb-star-wars-thrawn-tpb-n-1.html" title="STAR WARS: THRAWN">STAR WARS: THRAWN</a>
+                                                                    <small class="subtitle lightText">
+                                        STAR WARS: THRAWN                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>REVISTAS</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qswth001-mx-star-wars-thrawn-tpb-star-wars-thrawn-tpb-n-1.html"
+                                   title="STAR WARS: THRAWN"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74051" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-74051">
+                    <span class="price">$ 149.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/74051/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/74051/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/74051/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qswav002-mx-mi-primer-comic-star-wars-ad-mi-primer-comic-star-w-n.html" title="MI PRIMER COMIC STAR WARS ADVENTURES: DESVÍO INESPERADO, EDICION 2" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/S/QSWAV002_0.jpg" alt="MI PRIMER COMIC STAR WARS ADVENTURES: DESVÍO INESPERADO, EDICION 2"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qswav002-mx-mi-primer-comic-star-wars-ad-mi-primer-comic-star-w-n.html" title="MI PRIMER COMIC STAR WARS ADVENTURES: DESVÍO INESPERADO, EDICION 2">MI PRIMER COMIC STAR WARS ADVENTURES: DESVÍO INESPERADO, EDICION 2</a>
+                                                                    <small class="subtitle lightText">
+                                        MI PRIMER COMIC STAR WARS ADVENTURES: DESVÍO INESPERADO, EDICION 2                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>MI PRIMER COMIC STAR WARS ADVENTURES: DESVÍO INESPERADO, EDICION 2</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qswav002-mx-mi-primer-comic-star-wars-ad-mi-primer-comic-star-w-n.html"
+                                   title="MI PRIMER COMIC STAR WARS ADVENTURES: DESVÍO INESPERADO, EDICION 2"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73196" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-73196">
+                    <span class="price">$ 179.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/73196/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73196/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73196/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qpato005-mx-patoaventuras-comic-patoaventuras-n-5.html" title="PATOAVENTURAS N.5" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/P/QPATO005_0.jpg" alt="PATOAVENTURAS N.5"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qpato005-mx-patoaventuras-comic-patoaventuras-n-5.html" title="PATOAVENTURAS N.5">PATOAVENTURAS N.5</a>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>REVISTAS</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qpato005-mx-patoaventuras-comic-patoaventuras-n-5.html"
+                                   title="PATOAVENTURAS N.5"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73543" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-73543">
+                    <span class="price">$ 35.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/73543/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73543/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73543/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qdyla001-mx-dylan-dog-dylan-dog-n-1.html" title="DYLAN DOG N.1" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/D/QDYLA001_0.jpg" alt="DYLAN DOG N.1"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qdyla001-mx-dylan-dog-dylan-dog-n-1.html" title="DYLAN DOG N.1">DYLAN DOG N.1</a>
+                                                                    <small class="subtitle lightText">
+                                        DYLAN DOG N.1                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>DYLAN DOG N.1</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qdyla001-mx-dylan-dog-dylan-dog-n-1.html"
+                                   title="DYLAN DOG N.1"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73321" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-73321">
+                    <span class="price">$ 79.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/73321/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73321/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/73321/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item last">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.com.mx/store/pub_mex_es/qmoon001-mx-moonshine-moonshine-n-1.html" title="MOONSHINE N.1" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://cdn62.paninicloud.com/store/media/catalog/product/cache/52/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/Q/M/QMOON001_0.jpg" alt="MOONSHINE N.1"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qmoon001-mx-moonshine-moonshine-n-1.html" title="MOONSHINE N.1">MOONSHINE N.1</a>
+                                                                    <small class="subtitle lightText">
+                                        MOONSHINE N.1                                    </small>
+                                                            </h3>
+                            <div class="desc std">
+                                                                <p>REVISTAS</p>
+                                <a href="http://comics.panini.com.mx/store/pub_mex_es/qmoon001-mx-moonshine-moonshine-n-1.html"
+                                   title="MOONSHINE N.1"
+                                   class="btn btn-link link-learn">
+                                    <i class="fa fa-info-circle"></i>
+                                    <span>
+														Saber más													</span>
+                                </a>
+                                                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+                                        <h5>
+                                            <small>Año: </small> 2018                                        </h5>
+                                        <!-- h5>
+                                            <small>País:</small> MX                                        </h5 -->
+                                        <h5>
+                                            <small>Idioma:</small> Español (MEX)                                        </h5>
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74043" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                                            <h2 class="regular-price" id="product-price-74043">
+                    <span class="price">$ 229.00</span>                </h2>
+                        
+        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                            <button type="button" title="Añadir al carro" class="button btn btn-cart" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuY29tLm14L3N0b3JlL3B1Yl9tZXhfZXMvbWFnYXppbmVzL2NvbWljcy5odG1s/product/74043/form_key/qQRhVmF89jktF5u9/')">
+                                                    <i class="fa fa-2x fa-shopping-cart"></i>
+                                                    <span> Añadir al carro</span>
+                                                </button>
+                                                                                                                                        <button title="Añadir a la lista de deseos" onclick="setLocation('http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/74043/form_key/qQRhVmF89jktF5u9/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-2x fa-gift"></i> <span>Añadir a la lista de deseos</span>
+                                                </button>
+                                                                                    </div>
+
+                                        <!-- ul class="add-to-links">
+                                                                                            <li>
+                                                    <a href="http://comics.panini.com.mx/store/pub_mex_es/wishlist/index/add/product/74043/form_key/<esi:include src="http://comics.panini.com.mx/store/pub_mex_es/turpentine/esi/getFormKey/ttl/1440/method/esi/scope/global/access/private/" />/" class="link-wishlist">Añadir a la lista de deseos</a>
+                                                </li>
+                                                                                                                                </ul -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+            <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+
+        
+        <div class="toolbar-bottom">
+                <div class="panel panel-pager">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <form class="limiter navbar-form navbar-left">
+                    <label>Mostrar</label> <select onchange="setLocation(this.value)">
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=5">
+                                5                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=10" selected="selected">
+                                10                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=15">
+                                15                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=20">
+                                20                            </option>
+                                                    <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?limit=25">
+                                25                            </option>
+                                            </select> por página                </form>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="list-pager navbar-left">
+                    <span class="navbar-text">Page:</span>
+                    
+    
+    
+    
+        <!-- div class="pages" -->
+        <!-- strong>Página:</strong -->
+        <ul class="pagination pagination-sm">
+        
+        
+        
+                                    <li class="current"><a href="#" class="disabled">1</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=2">2</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=3">3</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=4">4</a></li>
+                                                <li><a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=5">5</a></li>
+                    
+        
+        
+                    <li>
+                <a class="next i-next" href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?p=2" title="Next">
+                                            <i class="fa fa-caret-right" alt="Next"></i>
+                                    </a>
+            </li>
+                </ul>
+
+    <!-- /div -->
+    
+    
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                                    <form class="navbar-form navbar-right">
+                                                    <p class="view-mode">
+                                                                                            </p>
+                        
+                        <div class="sort-by">
+                            <label>Ordenar por</label>
+                            <select onchange="setLocation(this.value)">
+                                                                                                                                                                                <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=name">
+                                            Título                                        </option>
+                                                                                                                                                <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=price">
+                                            Precio                                        </option>
+                                                                                                                                                <option value="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=pnn_data_uscita" selected="selected">
+                                            DATE                                        </option>
+                                                                                                </select>
+                                                            <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?dir=asc&amp;order=pnn_data_uscita" title="Configurar sentido ascendente">
+                                    <i class="fa fa-lg fa-fw fa-chevron-circle-down"></i>
+                                    <span class="sr-only">Configurar sentido ascendente</span>
+                                    <!-- img src="http://cdn62.paninicloud.com/store/skin/frontend/base/default/images/i_desc_arrow.gif" alt="Configurar sentido ascendente" class="v-middle"/ -->
+                                </a>
+                                                    </div>
+                    </form>
+                            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-center">
+                                    Artículos 1 a 10 de 489 totales                            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+<!-- CATEGORY DATA LAYER -->
+        </div>
+        <div class="col-right col-md-3 sidebar"><div class="block block-categories-nav panel panel-danger">
+
+    <div class="panel-heading">
+        <h5 class="block-title panel-title">Categorías</h5>
+    </div>
+    <!-- div class="block-content" -->
+    <ul class="categories-nav first-level list-group">
+        <li class="list-group-item">
+              <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines.html">
+                  <i class="fa fa-caret-right"></i> <span>Panini Comics, Panini Manga</span>
+              </a>
+
+                            
+        <ul class="categories-nav second-level list-group">
+        <!-- Mage_Catalog_Block_Navigation -->
+                               <li class="list-group-item">
+                <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/manga.html">
+                    <i class="fa fa-caret-right"></i> <span>Panini Manga</span>
+                </a>
+
+                            </li>
+                                           <li class="list-group-item current">
+                <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html">
+                    <i class="fa fa-caret-down"></i> <span>Panini Comics</span>
+                </a>
+
+                                                                                    </li>
+                            </ul>
+            
+    </li>
+    
+    
+        <li class="list-group-item">
+              <a href="http://comics.panini.com.mx/store/pub_mex_es/books.html">
+                  <i class="fa fa-caret-right"></i> <span>Panini Books</span>
+              </a>
+
+    
+    
+        <li class="list-group-item">
+              <a href="http://comics.panini.com.mx/store/pub_mex_es/partworks.html">
+                  <i class="fa fa-caret-right"></i> <span>Fascículos - Superhéroes</span>
+              </a>
+
+    
+    
+        <!-- /div -->
+</div>
+<div class="block block-layered-nav panel panel-danger">
+    <div class="panel-heading">
+        <h5 class="block-title panel-title">Filtrar por</h5>
+    </div>
+
+    
+                <div id="narrow-by-list">
+                                                            
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Disponible        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                49            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_layered_available=761180">No</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                440            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_layered_available=761179">Sí</a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Precio        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                344            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?price=-100"><span class="price">$ 0.00</span> - <span class="price">$ 99.99</span></a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                74            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?price=100-200"><span class="price">$ 100.00</span> - <span class="price">$ 199.99</span></a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                59            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?price=200-300"><span class="price">$ 200.00</span> - <span class="price">$ 299.99</span></a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                7            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?price=300-400"><span class="price">$ 300.00</span> - <span class="price">$ 399.99</span></a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                3            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?price=400-500"><span class="price">$ 400.00</span> - <span class="price">$ 499.99</span></a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?price=600-700"><span class="price">$ 600.00</span> - <span class="price">$ 699.99</span></a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?price=700-"><span class="price">$ 700.00</span> y por encima</a>
+            </li>
+</ul>
+                                                                                            
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Línea        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                3            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_collana_libreria=762464">ES_0040|ENCICLOPEDIAS</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_collana_libreria=762472">ES_0048|NOVELAS</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_collana_libreria=762477">ES_0053|VIDEOJUEGOS, TV Y CINE</a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Formato        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_rilegatura=761112">ES_002|Tomo</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                4            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_rilegatura=761115">ES_005|Tomo en tapa dura</a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Género        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_genere=761119">ES_001|Superhéroes</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_genere=761123">ES_005|Ciencia Ficción</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_genere=761125">ES_007|Humor</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                3            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_genere=762497">ES_024|Arte</a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Tipo        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_tipologia=761141">ES_001|Cómic</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                3            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_tipologia=761144">ES_004|Enciclopedia</a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Interior        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                4            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_interni=761147">ES_001|Color</a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.com.mx/store/pub_mex_es/magazines/comics.html?pnn_interni=761148">ES_002|Blanco y negro</a>
+            </li>
+</ul>
+                                    </div>
+        <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+    
+</div>
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+</div>
+    </section>
+<!-- /div -->
+ <footer class="container"> <hr class="footerLine" /> 
+	<div class="footerContentWrapper"> <hr class="footerLine2" /> <section id="sitemap" class="sitemap "> 
+			<div class="row"> 
+				<div class="col-sm-4 col-md-2 items-5"> 
+					<div class="lead text-nowrap"> <a href="http://comics.panini.com.mx/el-grupo-panini.html"> El Grupo Panini </a> </div>
+					 </div>
+				 
+				<div class="col-sm-4 col-md-2 items-5"> 
+					<div class="lead text-nowrap"> <a href="http://comics.panini.com.mx/tienda-online/catalogo-completo.html"> Tienda Online </a> </div>
+					 <ul class="list-group"> <li class="list-group-item"> <a href="http://comics.panini.com.mx/tienda-online/catalogo-completo.html"> <i class="fa fa-angle-right"></i> <span>Catálogo completo</span> </a> </li> <li class="list-group-item"> <a href="http://comics.panini.com.mx/tienda-online/catalogo-panini-comics.html"> <i class="fa fa-angle-right"></i> <span>Catálogo Panini Comics</span> </a> </li> <li class="list-group-item"> <a href="http://comics.panini.com.mx/tienda-online/catalogo-panini-manga.html"> <i class="fa fa-angle-right"></i> <span>Catálogo Panini Manga</span> </a> </li> <li class="list-group-item"> <a href="http://comics.panini.com.mx/tienda-online/catalogo-panini-books.html"> <i class="fa fa-angle-right"></i> <span>Catálogo Panini books</span> </a> </li> <li class="list-group-item"> <a href="http://comics.panini.com.mx/tienda-online/fasciculos.html"> <i class="fa fa-angle-right"></i> <span>Fascículos</span> </a> </li> <li class="list-group-item"> <a href="http://comics.panini.com.mx/tienda-online/busqueda-avanzada.html"> <i class="fa fa-angle-right"></i> <span>Búsqueda avanzada</span> </a> </li> <li class="list-group-item"> <a href="http://comics.panini.com.mx/tienda-online/suscripciones.html"> <i class="fa fa-angle-right"></i> <span>Suscripciones</span> </a> </li> </ul> </div>
+				 
+				<div class="col-sm-4 col-md-2 items-5"> 
+					<div class="lead text-nowrap"> <a href="http://comics.panini.com.mx/atencion-al-cliente.html"> Atención al cliente </a> </div>
+					 </div>
+				 
+				<div class="col-sm-4 col-md-2 items-5"> 
+					<div class="lead text-nowrap"> <a href="http://comics.panini.com.mx/politicas-de-envio.html"> Políticas de envío </a> </div>
+					 </div>
+				 
+				<div class="col-sm-4 col-md-2 items-5"> 
+					<div class="lead text-nowrap"> <a target="_blank" href="http://comics.panini.com.mx/suscripciones.html"> Suscripciones </a> </div>
+					 </div>
+				 </div>
+			 </section> </div>
+	 
+	<div id="payment-methods" class="fluid-container"> 
+		<div class="container payment-wrapper"> 
+			<div class="row"> 
+				<div id="paypal" class="col-xs-6 col-sm-3 col-sm-offset-3 text-right"> <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"> <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-150px.png" border="0" alt="PayPal Logo"> </a> </div>
+				 
+				<div id="postfinance" class="col-xs-6 col-sm-3 text-left"> <a href="https://www.postfinance.ch/en/cust/secure/onlinesec.html" title="How PostFinance Works" onclick="javascript:window.open('https://www.postfinance.ch/en/cust/secure/onlinesec.html','WIPostFinance','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"> <img border="0" alt="PostFinance Logo" src="http://comics.panini.com.mx/typo3temp/_processed_/csm_PostFinancePayments_9b71347f2d.gif" width="168" height="60" /> </a> </div>
+				 </div>
+			 </div>
+		 </div>
+	 
+	<div id="pnn-footer"></div>
+	 
+	<script type="text/javascript">
+            var locale = "es-mx";
+            var type = "pnnss";
+            var format = "html";
+        </script>
+	
+	<script type="text/javascript" src="http://legals.paninicloud.com/legals.inject.js"></script>
+	</footer> <!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+ 
+
+ 
+<!-- ESI END DUMMY COMMENT [] -->
+<script type="text/javascript">
+    var amlabel_selector = '.product-image';
+    </script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5190203082","applicationID":"53882203","transactionName":"YVwBbEMEXEVQUE0MW1gWIltFDF1YHlBYEVVaVgQXUgRGU1ZcSxwbQFAGTw==","queueTime":0,"applicationTime":1406,"atts":"TRsCGgseT0s=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
