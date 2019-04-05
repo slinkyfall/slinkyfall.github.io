@@ -1,0 +1,348 @@
+#map {
+    width: 70%;
+    height: 500px;
+}
+
+.kiosks_link {
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
+
+.kiosks_link:hover {
+    color: #f79121;
+}
+
+.kiosks_items_wrap {
+    /*border-bottom: 1px solid #777;*/
+    max-width: 100%;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin-bottom: 0px;
+}
+
+.kiosks_list_wrap {
+    overflow-y: scroll;
+    width: 30%;
+    height: 500px;
+}
+
+.kiosks_input {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    padding-left: 10px;
+    outline: 0;
+    font-size: 14px;
+    height: 30px;
+}
+
+.kiosks {
+    overflow: hidden;
+    position: relative;
+    background-color: #ECF0F1;
+    padding: 25px;
+    border: 1px solid #000;
+    margin-top:20px;
+}
+
+.kiosks_button {
+    color: #f79121;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+}
+
+.kiosks_button:hover {
+    background-color: #f79121;
+    border-color: #f79121;
+    color: #fff;
+}
+
+.kiosks_button_selected,
+.kiosks_button_selected:hover {
+    color: #fff;
+    background-color: #000 !important;
+    border-color: #000 !important;
+    cursor: default !important;
+    opacity: .5;
+}
+
+.kiosks_button_selected span,
+.kiosks_button_selected:hover span {
+    background-color: #000 !important;
+}
+
+.kiosks_button:active,
+.kiosks_button:focus {
+    color: #fff;
+}
+
+.kiosks_button_selected {}
+
+.kiosks_item {
+    margin: 10px 0;
+}
+
+p.kiosk_address,
+p.kiosks_address {
+    font-size: 12px;
+}
+
+p.kiosk_address-current {
+    font-size: 16px;
+}
+
+.kiosks_current {
+    //padding: 20px;
+    //border: 1px solid #eee;
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 40px;
+}
+
+.kiosks_current-dashboard {
+    padding: 0;
+    border: 0;
+}
+
+.kiosks_current-dashboard h1 {
+    font-size: 20px;
+}
+
+.kiosks_list.loading:before {
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../images/loading.gif');
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.kiosks_list #byName,
+.kiosks_list #byLocation {
+    display: none;
+}
+
+.kiosks_list.byname #byName {
+    display: block;
+}
+
+.kiosks_list.bylocation #byLocation {
+    display: block;
+}
+
+.kiosks_list_title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.kiosks_search {
+    position: relative;
+    top: 0;
+    background-color: #eee;
+    width: 100%;
+    /*padding-bottom: 20px;*/
+}
+
+.kiosk_invalid {
+    color: #FF0000;
+}
+
+.kiosks_search .form-group {
+    background-color: #fff;
+    height: 30px;
+    border: 1px solid #777;
+}
+
+.kiosks_current.loading:before {
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../images/loading.gif');
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-size: 30px;
+}
+
+.kiosks div:nth-child(2) {
+    margin: 0 !important;
+}
+
+.kiosks span {
+    color: #777 !important;
+}
+
+.map_wrap {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.kiosks_submit {
+    color: #777;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+}
+
+#pac-input {
+	background-color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+    /* margin-left: 12px; */
+    padding-left: 15px;
+    height: 30px;
+    /* padding: 0 11px 0 13px; */
+    text-overflow: ellipsis;
+    width: 300px;
+}
+
+@media only screen and (max-width: 961px) {
+    #pac-input {
+        width: 85%;
+        margin-left: 7.5%;
+        box-sizing: border-box;
+        left: 0!important;
+    }
+
+    .gmnoprint{
+        display: none;
+    }
+
+}
+
+#pac-input:focus {
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#target {
+    width: 345px;
+}
+.map_form{
+	width: 70%;
+	height: 100%;
+}
+.map_form #map{
+	width: 100% !important;
+}
+@media only screen and (max-width: 960px) {
+    .kiosks_list_wrap,
+    #map,.map_form {
+        width: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+    .map_wrap {
+        display: block;
+    }
+
+
+    #map,.map_form {
+        width: 100%;
+        height: 300px;
+    }
+
+    .kiosks_list_wrap{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+#items-mobile-container {
+    width: 100%;
+    font-size: 13px;
+    display: none;
+    padding-bottom: 5px;
+}
+
+#items-mobile-container #items-mobile {
+    width: 100%;
+    font-size: 13px;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .kiosks_list_wrap{
+        overflow-y: inherit;
+    }
+
+    #items {
+        display: none;
+    }
+
+    #items-mobile-container {
+        display: block;
+    }
+}
+
+#pickuppoint-kiosk {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.kiosk-service {
+    float: left;
+    margin-left: 2em;
+    font-size: 10px;
+}
+
+.selected-kiosk-info {
+    float: left;
+}
+
+#pickuppoint-change-kiosk {
+    margin-top: 1em;
+    display: block;
+}

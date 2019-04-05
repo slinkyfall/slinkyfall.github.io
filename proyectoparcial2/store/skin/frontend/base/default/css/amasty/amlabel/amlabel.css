@@ -1,0 +1,107 @@
+.amlabel-div {
+    position: relative;
+}
+
+.amlabel-div .amlabel-txt {
+    line-height: 11px;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 0.01px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.amlabel-div a {
+    text-decoration: none;
+    position: relative;
+}
+
+.amlabel-table {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.amlabel-table td {
+    vertical-align: middle;
+    text-align: center;
+    border: 0;
+    height: auto;
+}
+
+.top-center {
+    top: 0;
+    left: 50%;
+}
+
+.middle-left {
+    left: 0;
+    top: 50%;
+}
+
+.middle-right {
+    right: 0;
+    top: 50%;
+}
+
+.bottom-center {
+    bottom: 0;
+    right: 50%;
+}
+
+.middle-center {
+    top: 40%;
+    left: 40%;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.products-list .amlabel-div {
+    float: left;
+}
+
+* html .amlabel-div {
+    float: left;
+}
+
+* html .amlabel-div a {
+    position: relative;
+}
+
+@media (max-width: 930px) {
+    .amlabel-table {
+        display: none;
+    }
+}
+
+.amlabel-table2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.amlabel-txt2 {
+    width: 100%;
+    height: 100%;
+    background-size: contain !important;
+    position: absolute;
+}

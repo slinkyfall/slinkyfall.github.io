@@ -1,0 +1,208 @@
+@CHARSET "UTF-8";
+
+label.control-label {
+	display:block;
+}
+
+.control-group > .controls {
+	margin-left: 0px;
+	display:inline-block;
+	width: 100%;
+}
+
+.form-list .control label {
+float: none;
+}
+
+.description {
+	margin-left: 0px;
+}
+
+.checkoutcontainer .payment-methods .expiration-date .multi-control .input-box { 
+	width: auto !important;
+	display: inline-block;
+}
+
+.form-list .multi-control .input-box{
+	display: inline-block;
+	width: auto !important;
+}
+
+.control-group.date-of-birth .select-field {
+	display: inline-block;
+}
+.control-group.date-of-birth .select-field select {
+	width: 81px;
+	margin-right: 5px;
+}
+.control-group .option input[type=checkbox],
+.control-group .option input[type=radio] {
+	margin-right: 5px;
+}
+
+.multi-control {
+	overflow: auto;
+}
+
+.required {
+	color: #ff5000;
+	padding-left: 2px;
+}
+
+.form-list .card-cvc .input-box input.input-text {
+	width: 48px;
+}
+
+.multi-control div select{
+	width: 75px;
+}
+
+.checkoutcontainer .payment-methods .card-cvc .input-box .input-text{
+	width: 48px !important;
+}
+
+.checkoutcontainer .payment-methods .input-box .input-box select{
+	width: 75px !important;
+}
+
+.postfinancecw-iframe{
+	height: 550px;
+	width: 100%;
+	border: none;
+}
+
+.payment-methods .form-list select{
+	width: 100%;
+	max-width: 260px;
+}
+
+
+.sp-methods .card-brand-image-box,
+.payment-methods .card-brand-image-box,
+.payment-block .card-brand-image-box {
+	display: inline-block;
+}
+
+
+.sp-methods .card-brand-image-color.brand-is-deselected,
+.payment-methods .card-brand-image-color.brand-is-deselected,
+.payment-block .card-brand-image-color.brand-is-deselected {
+	display:none;
+}
+
+.sp-methods .card-brand-image-grey.brand-is-selected,
+.payment-methods .card-brand-image-grey.brand-is-selected,
+.payment-block .card-brand-image-grey.brand-is-selected {
+	display:none;
+}
+
+.sp-methods .card-brand-image-selection,
+.payment-methods .card-brand-image-selection,
+.payment-block .card-brand-image-selection {
+	margin: 5px 0;
+}
+
+.sp-methods .card-brand-image-selection img,
+.payment-methods .card-brand-image-selection img,
+.payment-block .card-brand-image-selection img {
+	width:auto;
+	height: 20px;
+	margin-right: 3px;
+}
+
+.sp-methods .invalid-card-number,
+.sp-methods .invalid-cvc-number,
+.payment-methods .invalid-card-number,
+.payment-methods .invalid-cvc-number,
+.payment-block .invalid-card-number,
+.payment-block .invalid-cvc-number {
+	border-color: #fb7f88 !important;
+	background-image: url(images/invalid.png) !important;
+	background-position: 242px center;
+	background-repeat: no-repeat !important;
+}
+
+.sp-methods .valid-card-number,
+.sp-methods .valid-cvc-number,
+.payment-methods .valid-card-number,
+.payment-methods .valid-cvc-number,
+.payment-block .valid-card-number,
+.payment-block .valid-cvc-number {
+	background-image: url(images/valid.png) !important;
+	background-position: 242px center;
+	background-repeat: no-repeat !important;
+}
+
+.sp-methods .invalid-cvc-number,
+.sp-methods .valid-cvc-number,
+.payment-methods .invalid-cvc-number,
+.payment-methods .valid-cvc-number,
+.payment-block .invalid-cvc-number,
+.payment-block .valid-cvc-number {
+	background-position: 36px center;
+}
+
+.sp-methods .expiration-date select,
+.payment-methods .expiration-date select,
+.payment-block .expiration-date select {
+	margin-right: 5px;
+}
+
+.payment-methods .invalid-card-number,
+.payment-methods .valid-card-number {
+	background-position: 206px center;
+}
+
+#aw-onestepcheckout-payment-method .sp-methods .invalid-card-number,
+#aw-onestepcheckout-payment-method .sp-methods .valid-card-number {
+	background-position: 212px center;
+}
+
+#aw-onestepcheckout-payment-method .expiration-date select {
+	width: 100px;
+}
+
+#aw-onestepcheckout-payment-method .card-cvc input.input-text {
+	width: 48px;
+}
+
+#gcheckout-payment-methods .sp-methods .invalid-card-number,
+#gcheckout-payment-methods .sp-methods .valid-card-number {
+	background-position: 182px center;
+}
+
+#gcheckout-payment-methods .sp-methods .invalid-cvc-number,
+#gcheckout-payment-methods .sp-methods .valid-cvc-number {
+	background-position: 34px center;
+}
+
+#gcheckout-payment-methods .card-number input.input-text {
+	width: 200px;
+}
+
+#gcheckout-payment-methods .card-cvc input.input-text {
+	width: 52px;
+}
+
+.opc-wrapper-opc .payment-block .card-holder-name input[type="text"].input-text,
+.opc-wrapper-opc .payment-block .card-number input[type="text"].input-text {
+	width: 260px;
+}
+
+.opc-wrapper-opc .payment-block .expiration-date select.select {
+	width: 130px;
+}
+
+.opc-wrapper-opc .payment-block .card-cvc input[type="text"].input-text {
+	width: 55px;
+}
+
+
+.postfinancecw-external-checkout-widget {
+	line-height: 34px;
+}
+
+.klarna-link {
+	float: none !important;
+	margin: 0 !important;
+}

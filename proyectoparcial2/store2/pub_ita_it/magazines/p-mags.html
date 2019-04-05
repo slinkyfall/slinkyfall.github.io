@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<title>Panini Magazines - Comics, Manga, Riviste</title>
+<meta name="description" content="Default Description" />
+<meta name="keywords" content="Magento, Varien, E-commerce" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+<link rel="shortcut icon" href="http://comics.panini.it/store/media/favicon/default/favicon.ico" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://comics.panini.it/store/js/blank.html';
+    var BLANK_IMG = 'http://comics.panini.it/store/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/js/calendar/calendar-win2k-1.css" />
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/skin/frontend/base/default/css/amasty/amlabel/amlabel.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/skin/frontend/base/default/css/bubble/elasticsearch.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/skin/frontend/base/default/ajaxcart/growler.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/skin/frontend/base/default/ajaxcart/modalbox.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/skin/frontend/base/default/pickuppoint/css/kiosks-select.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/css/Core.css" media="all" />
+<script type="text/javascript" src="http://comics.panini.it/store/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/lib/ccard.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/prototype/validation.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/scriptaculous/builder.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/scriptaculous/dragdrop.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/scriptaculous/slider.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/varien/js.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/varien/form.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/varien/menu.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/mage/translate.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/mage/cookies.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/amasty/amlabel/amlabel_observer.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/varien/product.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/varien/configurable.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/calendar/calendar-setup.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/js/pickuppoint/pickuppoint.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/ajaxcart/growler.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/base/default/ajaxcart/modalbox.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/base/default/ajaxcart/ajaxcart.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/base/default/js/bundle.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/jQuery.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/Modernizr.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/Respond.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/Bootstrap.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/Comics.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/Cookie.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/checkascii.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/reclami.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/figurine-mancanti.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/ComicsTheme/default/js/google-tag-manager.js"></script>
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://comics.panini.it/store/skin/frontend/base/default/css/styles-ie.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://comics.panini.it/store/js/lib/ds-sleight.js"></script>
+<script type="text/javascript" src="http://comics.panini.it/store/skin/frontend/base/default/js/ie6.js"></script>
+<![endif]-->
+
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.comics.panini.it';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["CL","HK","IE","MO","PA"];
+//]]>
+</script>
+<script type="text/javascript">//<![CDATA[
+        var Translator = new Translate({"Please select an option.":"Selezionare una opzione.","This is a required field.":"Questo \u00e8 un campo obbligatorio.","Please enter a valid number in this field.":"Inserire un numero valido in questo campo.","Please use letters only (a-z or A-Z) in this field.":"Utilizzare solo lettere in questo campo (a-z o A-Z).","Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"Utilizzare solo lettere (a-z), numeri (0-9) o underscore(_) in questo campo, la prima lettera deve essere una lettera.","Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.":"Inserisci un numero di telefono valido. Per esempio (123) 456-7890 o 123-456-7890.","Please enter a valid date.":"Inserire una data valida.","Please enter a valid email address. For example johndoe@domain.com.":"Inserire un indirizzo email valido. Per esempio johndoe@domain.com.","Please enter 6 or more characters. Leading or trailing spaces will be ignored.":"Inserire 6 o pi\u00f9 caratteri. Gli spazi iniziali o finali saranno ignorati.","Please make sure your passwords match.":"Assicurati che le password corrispondano.","Please enter a valid URL. For example http:\/\/www.example.com or www.example.com":"Inserire un URL valido. Per esempio http:\/\/www.example.com o www.example.com","Please enter a valid social security number. For example 123-45-6789.":"Inserire un numero valido di previdenza sociale. Per esempio 123-45-6789.","Please enter a valid zip code. For example 90602 or 90602-1234.":"Inserire un codice zip valdio. Per esempio 90602 o 90602-1234.","Please enter a valid zip code.":"Inserire codice zip valido.","Please use this date format: dd\/mm\/yyyy. For example 17\/03\/2006 for the 17th of March, 2006.":"Utilizzare questo formato della data: dd\/mm\/yyyy. Per esempio 17\/03\/2006 per il 17 di Marzo, 2006.","Please enter a valid $ amount. For example $100.00.":"Inserire un importo valido di $. Per esempio $100.00.","Please select one of the above options.":"Selezionare una delle opzioni soprastanti.","Please select one of the options.":"Selezionare una delle opzioni.","Please select State\/Province.":"Selezionare Stato\/Provincia.","Please enter a number greater than 0 in this field.":"Inserire un numero maggiore di 0 in questo campo.","Please enter a valid credit card number.":"Inserire un numero di carta di credito valido.","Please wait, loading...":"Attendere prego, caricamento...","Complete":"Completo","Upload Security Error":"Errore caricamento sicuro","Upload HTTP Error":"Errore caricamento HTTP","Upload I\/O Error":"Errore caricamento I\/O","SSL Error: Invalid or self-signed certificate":"Errore SSL: Certificato non valido o auto-firmato","Add Products":"Aggiungi prodotti","Processing":"In elaborazione","Something bad happened":"Qualcosa non ha funzionato correttamente","Item was added into cart.":"L'articolo \u00e8 stato aggiunto al carrello.","You are now redirected to your account page, please update your address data":"Ti stiamo reindirizzando alla pagina del tuo account, ti preghiamo di aggiornare i dati relativi al tuo indirizzo","You are now redirected to the registration form":"Ti stiamo reindirizzando alla pagina di registrazione","You should select one of available pick-up points to continue":"Selezionare un punto di ritiro dalla mappa prima di continuare","Select this pick-up point":"Seleziona questo punto di ritiro","Distance":"Distanza","Telephone":"Telefono","Hours":"Orari","Complaint":"Reclamo","Complaint details":"Dettagli reclamo","Submit complaint":"Invia reclamo","Cancel":"Annulla","Order":"Ordine","Missing delivery":"Mancata consegna","Wrong stickers":"Figurine sbagliate","Wrong collection":"Collezione sbagliata","Generic complaint":"Generico","Item already complained":"Riga gi\u00e0 reclamata","Order already complained":"Ordine gi\u00e0 reclamato","Comments":"Commenti"});
+        //]]></script>
+<script type="text/javascript">
+    //<![CDATA[
+    // http://stackoverflow.com/questions/19139063/twitter-bootstrap-3-dropdown-menu-disappears-when-used-with-prototype-js
+    (function() {
+        var isBootstrapEvent = false;
+        if (window.jQuery) {
+            var all = jQuery('*');
+            jQuery.each(['hide.bs.dropdown',
+                'hide.bs.collapse',
+                'hide.bs.modal',
+                'hide.bs.tooltip',
+                'hide.bs.popover'], function(index, eventName) {
+                all.on(eventName, function( event ) {
+                    isBootstrapEvent = true;
+                });
+            });
+        }
+        var originalHide = Element.hide;
+        Element.addMethods({
+            hide: function(element) {
+                if(isBootstrapEvent) {
+                    isBootstrapEvent = false;
+                    return element;
+                }
+                return originalHide(element);
+            }
+        });
+    })();
+    //]]>
+</script></head>
+<body class=" catalog-category-view categorypath-magazines-p-mags-html category-p-mags" id="store">
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Varien.searchForm) !== 'undefined') {
+    Varien.searchForm.prototype._selectAutocompleteItem = function(element) {
+        var link = element.down();
+        if (link && link.tagName == 'A') {
+            setLocation(link.href);
+        } else {
+            if (element.title){
+                this.field.value = element.title;
+            }
+            this.form.submit();
+        }
+    };
+    Varien.searchForm.prototype.initAutocomplete = function(url, destinationElement) {
+        new Ajax.Autocompleter(
+            this.field,
+            destinationElement,
+            url,
+            {
+                paramName: this.field.name,
+                method: 'get',
+                minChars: 2,
+                frequency: .1,
+                updateElement: this._selectAutocompleteItem.bind(this),
+                onShow : function(element, update) {
+                    if(!update.style.position || update.style.position=='absolute') {
+                        update.style.position = 'absolute';
+                        Position.clone(element, update, {
+                            setHeight: false,
+                            offsetTop: element.offsetHeight
+                        });
+                    }
+                    Effect.Appear(update,{duration:0});
+                }
+
+            }
+        );
+    };
+    Autocompleter.Base.prototype.markPrevious = function() {
+        if (this.index > 0) {
+            this.index--;
+        } else {
+            this.index = this.entryCount - 1;
+        }
+        var entry = this.getEntry(this.index);
+        if (entry.select('a').length === 0) {
+            this.markPrevious(); // Ignore items that don't have link
+        }
+    };
+    Autocompleter.Base.prototype.markNext = function() {
+        if (this.index < this.entryCount - 1) {
+            this.index++;
+        } else {
+            this.index = 0;
+        }
+        var entry = this.getEntry(this.index);
+        if (entry.select('a').length === 0) {
+            this.markNext(); // Ignore items that don't have link
+        } else {
+            entry.scrollIntoView(false);
+        }
+    };
+}
+//]]>
+</script>
+
+
+<script>dataLayer = [{"visitorLoginState":"Logged out","visitorType":"NOT LOGGED IN","visitorLifetimeValue":0,"visitorExistingCustomer":"No"}];</script>
+
+<script>shopgoStoresDataLayer = [{"visitorLoginState":"Logged out","visitorType":"NOT LOGGED IN","visitorLifetimeValue":0,"visitorExistingCustomer":"No"}];</script>
+
+
+<!-- Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PXS29D" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PXS29D');</script>
+
+<!-- End Google Tag Manager -->
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<header class="mainHeaderWrapper hidden-xs"> 
+	<div class="mainHeader"> 
+		<div class="container"> 
+			<script type="text/javascript">
+        //
+        if (typeof(Varien.searchForm) !== 'undefined') {
+          Varien.searchForm.prototype._selectAutocompleteItem = function(element) {
+              var link = element.down();
+              if (link && link.tagName == 'A') {
+                  setLocation(link.href);
+              } else {
+                  if (element.title){
+                      this.field.value = element.title;
+                  }
+                  this.form.submit();
+              }
+          };
+          Varien.searchForm.prototype.initAutocomplete = function(url, destinationElement) {
+              new Ajax.Autocompleter(
+                  this.field,
+                  destinationElement,
+                  url,
+                  {
+                      paramName: this.field.name,
+                      method: 'get',
+                      minChars: 2,
+                      frequency: .1,
+                      updateElement: this._selectAutocompleteItem.bind(this),
+                      onShow : function(element, update) {
+                          if(!update.style.position || update.style.position=='absolute') {
+                              update.style.position = 'absolute';
+                              Position.clone(element, update, {
+                                  setHeight: false,
+                                  offsetTop: element.offsetHeight
+                              });
+                          }
+                          Effect.Appear(update,{duration:0});
+                      }
+
+                  }
+              );
+          };
+          Autocompleter.Base.prototype.markPrevious = function() {
+              if (this.index > 0) {
+                  this.index--;
+              } else {
+                  this.index = this.entryCount - 1;
+              }
+              var entry = this.getEntry(this.index);
+              if (entry.select('a').length === 0) {
+                  this.markPrevious(); // Ignore items that don't have link
+              }
+          };
+          Autocompleter.Base.prototype.markNext = function() {
+            if (this.index < this.entryCount - 1) {
+                this.index++;
+            } else {
+                this.index = 0;
+            }
+            var entry = this.getEntry(this.index);
+            if (entry.select('a').length === 0) {
+                this.markNext(); // Ignore items that don't have link
+            } else {
+                entry.scrollIntoView(false);
+            }
+        };
+        }
+        //
+        </script>
+			
+			<div id="contents" class="row"> 
+				<div id="idWrapper"> 
+					<div class="logoWrapper"> <a class="HomeLink" id="HomeLink-Logo" href="http://comics.panini.it/"> <img src="http://comics.panini.it/typo3conf/ext/comics/Resources/Public/Images/pc2016_logo_paninicomics.png" class="" alt="Italia"/> </a> </div>
+					 
+					<div class="siteName headerElement"> 
+						<div class="homeLinkWrapper"> <h3> <a class="HomeLink" id="HomeLink-Country" href="http://comics.panini.it/">Italia</a> </h3> </div>
+						 </div>
+					 </div>
+				 
+				<div class="socialList btnIco headerElement hidden-xs"> 
+					<div class="bt-row social-content"> <a href="https://www.facebook.com/PaniniComics" target="_blank" title="Panini Facebook official page"> <i class="fa fa-fw fa-2x fa-facebook"></i><span class="sr-only">Facebook</span> </a> <a href="https://twitter.com/PaniniComicsIT" target="_blank" title="Panini Twitter official page"> <i class="fa fa-2x fa-twitter"></i><span class="sr-only">Twitter</span> </a> <a href="https://www.instagram.com/panini_comics/" target="_blank" title="Panini Instagram official page"> <i class="fa fa-2x fa-instagram"></i><span class="sr-only">Instagram</span> </a> <a href="https://www.youtube.com/user/Paninicomics" target="_blank" title="Panini YouTube official channel"> <i class="fa fa-2x fa-youtube"></i><span class="sr-only">YouTube</span> </a> </div>
+					 </div>
+				 
+				<div class="search headerElement hidden-xs"> <form id="search_mini_form" action="/store/pub_ita_it/catalogsearch/result/" method="get"> <fieldset class="input-box"> <input id="search" type="search" name="q" value="" class="input-text required-entry rapidSearch" maxlength="128" placeholder="Cerca..." /> </fieldset> <input type="hidden" name="pnn_layered_available" value="761179" /> 
+						<div id="search_autocomplete" class="search-autocomplete"></div>
+						 
+						<script type="text/javascript">
+                var suggestPath = 'http://comics.panini.it/store/autocomplete.php?store=pub_ita_it&fallback_url=http://comics.panini.it/store/pub_ita_it/catalogsearch/ajax/suggest/';
+                //
+                var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
+                searchForm.initAutocomplete(suggestPath, 'search_autocomplete');
+                //
+            </script>
+						</form> </div>
+				 
+				<div class="headerButton headerElement hidden-xs"> <a href="http://comics.panini.it/shop/" class="btnShop btnHeader btnBasic">Shop</a> </div>
+				 
+				<div class="headerButton headerElement hidden-xs"> <a href="http://comics.panini.it/user/my-account/" class="btnLogin btnHeader btnBasic"><span>login</span></a> </div>
+				 
+				<div class="icoWishlist btnIco headerElement hidden-xs"> <a class="btn btnHeader inactive" href="/store/pub_ita_it/wishlist/"> <i class="fa fa-star fa-fw inactive"></i> </a> </div>
+				 
+				<div class="hidden-xs"> 
+					<div class="icoUser btnIco headerElement"> <a class="btn btn-header inactive" href="http://comics.panini.it/user/"> <i class="fa fa-user fa-fw fa-2x inactive"></i> </a> </div>
+					 </div>
+				 
+				<div class="icoContact btnIco headerElement hidden-xs"> <a href="http://comics.panini.it/servizio-clienti/" class="btn btnHeader"> <i class="fa fa-envelope fa-fw fa-2x"></i> </a> </div>
+				 
+				<div class="cartWrapper btnIco headerElement"> 
+					<div id="mini-cart" class="squared btnIco"> <a href="/store/pub_ita_it/checkout/cart"> <i class="fa fa-fw fa-2x fa-shopping-cart fa-2x"></i><span id="mini-cart-qty" class="mini-cart-qty-value badge">0</span> </a> </div>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </header>
+ <nav class="navbar navbar-website" role="navigation"> 
+	<div class="container"> 
+		<div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-navigation"> <span class="sr-only">Toggle navigation</span> <i class="fa-bars fa-2x fa"></i> </button> <a class="navbar-brand visible-xs" href="http://comics.panini.it/"> <img src="http://comics.panini.it/typo3conf/ext/comics/Resources/Public/Images/pc2016_logo_paninicomics.png" class="Panini"/> </a> </div>
+		 
+		<div class="collapse navbar-collapse" id="collapse-navigation"> 
+			<div class="focusAreaNav visible-xs"> 
+				<div class="icoWishlist btnIco"> <a class="btn btnHeader inactive" href="/store/pub_ita_it/wishlist/"> <i class="fa fa-star fa-2x fa-fw inactive"></i> </a> </div>
+				 
+				<div class="icoUser btnIco headerElement"> <a class="btn btn-header inactive" href="http://comics.panini.it/user/"> <i class="fa fa-user fa-fw fa-2x inactive"></i> </a> </div>
+				 
+				<div class="icoContact btnIco"> <a class="btn btnHeader" href="http://comics.panini.it/servizio-clienti/"> <i class="fa fa-envelope fa-fw fa-2x"></i> </a> </div>
+				 
+				<div class="cartWrapper btnIco headerElement"> 
+					<div id="mini-cart" class="squared btnIco"> <a href="/store/pub_ita_it/checkout/cart"> <i class="fa fa-fw fa-2x fa-shopping-cart fa-2x"></i><span id="mini-cart-qty" class="mini-cart-qty-value badge">0</span> </a> </div>
+					 </div>
+				 </div>
+			 <ul class="nav navbar-nav"> <li class="firstItem"> <a tabindex="100" href="http://comics.panini.it/store/pub_ita_it/magazines/comics.html?dir=desc&amp;order=pnn_data_uscita&amp;pnn_layered_available=761179" class="firstItem" target="">Panini Comics</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.it/store/pub_ita_it/magazines/cmc-m.html?dir=desc&amp;order=pnn_data_uscita&amp;pnn_layered_available=761179" class="" target="">Marvel</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.it/store/pub_ita_it/magazines/manga.html?pnn_layered_available=761179" class="" target="">Planet Manga</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.it/store/pub_ita_it/magazines/cmc-d.html?pnn_layered_available=761179" class="" target="">Panini Disney</a> </li> <li class=""> <a tabindex="100" href="http://comics.panini.it/store/pub_ita_it/magazines/9l.html?pnn_layered_available=761179" class="" target="">Panini 9L</a> </li> <li class="lastItem"> <a tabindex="100" href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_layered_available=761179" class="lastItem" target="">Panini Magazines</a> </li> </ul> </div>
+		 </div>
+	 
+	<script>
+                (function ($) {
+                    $(document).ready(function () {
+                        $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            $(this).parent().siblings().removeClass('open');
+                            $(this).parent().toggleClass('open');
+                        });
+                    });
+                })(jQuery);
+            </script>
+	</nav> 
+<div class="search headerElement standaloneSearch visible-xs"> <form id="search_mini_form_mobile" action="/store/pub_ita_it/catalogsearch/result/" method="get"> <fieldset class="input-box"> <input id="search_mobile" type="search" name="q" value="" class="input-text required-entry rapidSearch" maxlength="128" placeholder="Cerca..."/> </fieldset> 
+		<div id="search_autocomplete_mobile" class="search-autocomplete"></div>
+		 
+		<script type="text/javascript">
+                var suggestPath = 'http://comics.panini.it/store/autocomplete.php?store=pub_ita_it&fallback_url=http://comics.panini.it/store/pub_ita_it/catalogsearch/ajax/suggest/';
+                //
+                var searchForm = new Varien.searchForm('search_mini_form_mobile', 'search_mobile', '');
+                searchForm.initAutocomplete(suggestPath, 'search_autocomplete_mobile');
+                //
+            </script>
+		</form> </div>
+  
+<!-- ESI END DUMMY COMMENT [] -->
+<!-- nm-mods -->
+<!-- div role="main" class="main-container col2-right-layout container-fluid" -->
+        <div class="midContentWrapper shopContentWrapper">
+            <div class="midContent">
+                <section id="main-content" class="container">
+                        <!-- nm-mods -->
+<ul class="breadcrumb">
+                    <li class="home">
+                            <a href="http://comics.panini.it/store/pub_ita_it/" title="Vai alla Home Page">Home</a>
+                        <!--                 <span>/ </span>
+             -->
+            </li>
+                    <li class="category36">
+                            <a href="http://comics.panini.it/store/pub_ita_it/magazines.html" title="">Comics, Manga, Riviste</a>
+                        <!--                 <span>/ </span>
+             -->
+            </li>
+                    <li class="category581">
+                            <strong>Panini Magazines</strong>
+                        <!--  -->
+            </li>
+        </ul>
+                    <div class="col-main col-md-9">
+                        <!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+                        
+<div class="page-title category-title">
+        <!-- nm-mods -->
+    <h2 class="page-header">Panini Magazines</h2>
+    <!-- div class="divider"><hr/></div -->
+</div>
+
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+
+ 
+<div class="row"> 
+	<div id="content" role="main" class="col-lg-12 "> 
+		<div id="c32023" class="csc-default"> 
+			<div class="tx-wf-magento"> 
+				<div id="c34933" class="csc-default"> 
+					<div id="panel-34933" class="panel panel-default panelPlain text-center visible-lg visible-md"> 
+						<div class="panel-body"> 
+							<div id="c34932" class="csc-default"> <a href="http://comics.panini.it/servizio-clienti/costi-e-tempi-di-spedizione/" target="_blank"> <figure> <img src="http://comics.panini.it/repository/Italy/Comics/Banners/_for_shop/spediz_free_banner-900x200.jpg" class="img-custom img-responsive" alt="" style="max-width:800px;"/> <figcaption></figcaption> </figure> </a> </div>
+							 </div>
+						 </div>
+					 </div>
+				 
+				<div id="c34938" class="csc-default"> 
+					<div id="panel-34938" class="panel panel-default panelPlain text-center visible-xs visible-sm"> 
+						<div class="panel-body"> 
+							<div id="c34937" class="csc-default"> <a href="http://comics.panini.it/servizio-clienti/costi-e-tempi-di-spedizione/" target="_blank"> <figure class="alsoBox text-left"> <img src="http://comics.panini.it/repository/Italy/Comics/Banners/_for_shop/spediz_free_banner-290x250.jpg" class="img-custom img-responsive" alt="" style="max-width:270px;"/> <figcaption></figcaption> </figure> </a> </div>
+							 </div>
+						 </div>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
+ 
+
+
+        <div class="category-products">
+            <div class="panel panel-pager">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <form class="limiter navbar-form navbar-left">
+                    <label>Mostra</label> <select onchange="setLocation(this.value)">
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=5">
+                                5                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=10">
+                                10                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=15">
+                                15                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=20">
+                                20                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=25" selected="selected">
+                                25                            </option>
+                                            </select> per pagina                </form>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="list-pager navbar-left">
+                    <span class="navbar-text">Pagina:</span>
+                    
+    
+    
+    
+        <!-- div class="pages" -->
+        <!-- strong>Pagina:</strong -->
+        <ul class="pagination pagination-sm">
+        
+        
+        
+                                    <li class="current"><a href="#" class="disabled">1</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=2">2</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=3">3</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=4">4</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=5">5</a></li>
+                    
+        
+        
+                    <li>
+                <a class="next i-next" href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=2" title="Successivo">
+                                            <i class="fa fa-angle-right" alt="Successivo"></i>
+                                    </a>
+            </li>
+                </ul>
+
+    <!-- /div -->
+    
+    
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                                    <form class="navbar-form navbar-right">
+                                                    <p class="view-mode">
+                                                                                            </p>
+                                                <div class="sort-by">
+                                                        <label>Ordina per</label>
+                            <select onchange="setLocation(this.value)">
+                                                                                                                                              
+                                                                                                                                                  <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=name">
+                                            Titolo                                        </option>
+                                                                          
+                                                                                                                                                  <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=price">
+                                            Prezzo                                        </option>
+                                                                          
+                                                                                                                                                  <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=pnn_data_uscita" selected="selected">
+                                            Data di uscita                                        </option>
+                                                                          
+                                                            </select>
+                                                            <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=pnn_data_uscita" title="Imposta ordine ascendente">
+                                    <i class="fa fa-lg fa-fw fa-chevron-circle-down"></i>
+                                    <span class="sr-only">Imposta ordine ascendente</span>
+                                    <!-- img src="http://comics.panini.it/store/skin/frontend/base/default/images/i_desc_arrow.gif" alt="Imposta ordine ascendente" class="v-middle"/ -->
+                                </a>
+                                                    </div>
+                    </form>
+                            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-center">
+                                    Articoli da 1 a 25 di 575 totali                            </div>
+        </div>
+    </div>
+                                        <div id="products-list" class="list-group">
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74290/s/mbuni001isbn-it-lilli-la-bimba-unicorno-lilli-la-bimba-unicorso-aurora/" title="Lilli la Bimba Unicorno" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Lilli la Bimba Unicorno"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74290/s/mbuni001isbn-it-lilli-la-bimba-unicorno-lilli-la-bimba-unicorso-aurora/" title="Lilli la Bimba Unicorno">
+                                    Lilli la Bimba Unicorno                                    &nbsp;                                </a>
+                                                                    <small class="subtitle lightText">
+                                        Aurora                                    </small>
+                                                                                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                09/05/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74290" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74290">
+                    € 9,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74290">
+                    € 8,91                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74290/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74242/s/mblok028-it-panini-blocks-panini-blocks-n-28/" title="LEGO Ninjago" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="LEGO Ninjago"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74242/s/mblok028-it-panini-blocks-panini-blocks-n-28/" title="LEGO Ninjago">
+                                    LEGO Ninjago                                    &nbsp;                                        &nbsp;
+                                        28                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Blocks
+                                                                        &nbsp; 28                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                18/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74242" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74242">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74242">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74242/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74258/s/mpago011-it-panini-go-panini-go-gormiti-magaz-n-11/" title="Gormiti Magazine" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Gormiti Magazine"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74258/s/mpago011-it-panini-go-panini-go-gormiti-magaz-n-11/" title="Gormiti Magazine">
+                                    Gormiti Magazine                                    &nbsp;                                        &nbsp;
+                                        2                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Go
+                                                                        &nbsp; 11                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                18/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74258" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74258">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74258">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74258/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74256/s/msupa010-it-super-panini-lego-movie-ii-n-10/" title="Lego Movie II" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Lego Movie II"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74256/s/msupa010-it-super-panini-lego-movie-ii-n-10/" title="Lego Movie II">
+                                    Lego Movie II                                    &nbsp;                                        &nbsp;
+                                        2                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Super Panini
+                                                                        &nbsp; 10                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                18/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74256" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74256">
+                    € 5,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74256">
+                    € 5,31                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74256/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74261/s/mpati047-it-party-time-national-geographic-kids-n-47/" title="LEGO Movie II Activity Book" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="LEGO Movie II Activity Book"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74261/s/mpati047-it-party-time-national-geographic-kids-n-47/" title="LEGO Movie II Activity Book">
+                                    LEGO Movie II Activity Book                                    &nbsp;                                </a>
+                                                                                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                18/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74261" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74261">
+                    € 8,99                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74261">
+                    € 8,09                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74261/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74257/s/mpagi019-it-panini-girls-ladybug-n-19/" title="Miraculous – Le Storie di Ladybug e Chat Noir" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Miraculous – Le Storie di Ladybug e Chat Noir"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74257/s/mpagi019-it-panini-girls-ladybug-n-19/" title="Miraculous – Le Storie di Ladybug e Chat Noir">
+                                    Miraculous – Le Storie di Ladybug e Chat Noir                                    &nbsp;                                        &nbsp;
+                                        19                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Girls
+                                                                        &nbsp; 19                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                15/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74257" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74257">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74257">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74257/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpagi003isbn-it-panini-girls-il-mio-primo-fumetto-miraculous-ladybug-3-t.html" title="Ladybug" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/P/MPAGI003ISBN_0.jpg" alt="Ladybug"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpagi003isbn-it-panini-girls-il-mio-primo-fumetto-miraculous-ladybug-3-t.html" title="Ladybug">
+                                    Ladybug                                    &nbsp;                                        &nbsp;
+                                        3                                                                    </a>
+                                                                                                <small class="serie ">
+                                    Il Mio Primo Fumetto
+                                                                    </small>
+                                                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                14/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74019" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74019">
+                    € 9,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74019">
+                    € 8,91                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/74019/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74019/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74246/s/mleba010-it-lego-batman-lego-batman-n-10/" title=" LEGO Batman Movie" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt=" LEGO Batman Movie"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74246/s/mleba010-it-lego-batman-lego-batman-n-10/" title=" LEGO Batman Movie">
+                                     LEGO Batman Movie                                    &nbsp;                                        &nbsp;
+                                        2                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    LEGO Batman Movie Magazine
+                                                                        &nbsp; 10                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                11/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74246" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74246">
+                    € 5,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74246">
+                    € 5,31                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74246/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74253/s/1wspid059-it-spiderman-magazine-spider-man-magazine-n-59/" title="Spider-Man &amp; i suoi fantastici amici" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Spider-Man &amp; i suoi fantastici amici"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74253/s/1wspid059-it-spiderman-magazine-spider-man-magazine-n-59/" title="Spider-Man &amp; i suoi fantastici amici">
+                                    Spider-Man &amp; i suoi fantastici amici                                    &nbsp;                                        &nbsp;
+                                        59                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Spider-man & i Suoi Fantastici Amici
+                                                                        &nbsp; 59                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                10/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74253" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74253">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74253">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In arrivo" class="button btn disabled btn-cart btn-comingsoon">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In arrivo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74253/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74260/s/mpasp027-it-panini-space-lego-star-wars-n-27/" title="LEGO Star Wars" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/P/MPASP027_0.jpg" alt="LEGO Star Wars"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74260/s/mpasp027-it-panini-space-lego-star-wars-n-27/" title="LEGO Star Wars">
+                                    LEGO Star Wars                                    &nbsp;                                        &nbsp;
+                                        27                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Space
+                                                                        &nbsp; 27                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                04/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74260" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74260">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74260">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/74260/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74260/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74259/s/mpaso064-it-panini-sorprese-panini-sorprese-my-lit-n-64/" title="My Little Pony" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="My Little Pony"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/catalog/product/view/id/74259/s/mpaso064-it-panini-sorprese-panini-sorprese-my-lit-n-64/" title="My Little Pony">
+                                    My Little Pony                                    &nbsp;                                        &nbsp;
+                                        53                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini & sorprese
+                                                                        &nbsp; 64                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                01/04/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-74259" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-74259">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-74259">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In ritardo" class="button btn disabled btn-cart btn-delay">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In ritardo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/74259/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpame076-it-panini-comics-mega-panini-comics-mega-spide-n-76.html" title="Spider-Man Magazine" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Spider-Man Magazine"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpame076-it-panini-comics-mega-panini-comics-mega-spide-n-76.html" title="Spider-Man Magazine">
+                                    Spider-Man Magazine                                    &nbsp;                                        &nbsp;
+                                        11                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Comics Mega
+                                                                        &nbsp; 76                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                30/03/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73831" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73831">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73831">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="In ritardo" class="button btn disabled btn-cart btn-delay">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>In ritardo</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73831/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpafr021-it-panini-friends-panini-friends-lego-frie-n-21.html" title="LEGO Friends" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="LEGO Friends"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpafr021-it-panini-friends-panini-friends-lego-frie-n-21.html" title="LEGO Friends">
+                                    LEGO Friends                                    &nbsp;                                        &nbsp;
+                                        17                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Friends
+                                                                        &nbsp; 21                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                28/03/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73828" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73828">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73828">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73828/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73828/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpale024-it-panini-legends-star-wars-magazine-n-19.html" title="Star Wars Magazine" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/P/MPALE024_0.jpg" alt="Star Wars Magazine"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpale024-it-panini-legends-star-wars-magazine-n-19.html" title="Star Wars Magazine">
+                                    Star Wars Magazine                                    &nbsp;                                        &nbsp;
+                                        19                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Legends
+                                                                        &nbsp; 19                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                21/03/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73830" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73830">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73830">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73830/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73830/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mbete008-it-ben-10-magazine-ben-10-magazine-n-8.html" title="Ben 10 Magazine" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Ben 10 Magazine"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mbete008-it-ben-10-magazine-ben-10-magazine-n-8.html" title="Ben 10 Magazine">
+                                    Ben 10 Magazine                                    &nbsp;                                        &nbsp;
+                                        8                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Ben 10 Magazine
+                                                                        &nbsp; 8                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                20/03/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73822" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73822">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73822">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73822/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73822/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpagi018-it-panini-girls-ladybug-n-18.html" title="Miraculous – Le Storie di Ladybug e Chat Noir" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Miraculous – Le Storie di Ladybug e Chat Noir"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpagi018-it-panini-girls-ladybug-n-18.html" title="Miraculous – Le Storie di Ladybug e Chat Noir">
+                                    Miraculous – Le Storie di Ladybug e Chat Noir                                    &nbsp;                                        &nbsp;
+                                        18                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Girls
+                                                                        &nbsp; 18                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                15/03/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73829" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73829">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73829">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73829/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73829/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpago010-it-panini-go-panini-go-gormiti-magaz-n-10.html" title="Gormiti Magazine" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/P/MPAGO010_0.jpg" alt="Gormiti Magazine"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpago010-it-panini-go-panini-go-gormiti-magaz-n-10.html" title="Gormiti Magazine">
+                                    Gormiti Magazine                                    &nbsp;                                        &nbsp;
+                                        1                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Go
+                                                                        &nbsp; 10                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                28/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73643" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73643">
+                    € 5,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73643">
+                    € 5,31                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Non disponibile" class="button btn disabled btn-cart btn-outstock">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>Non disponibile</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73643/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpame075-it-panini-comics-mega-panini-comics-mega-spider-man-mag-10.html" title="Spider-Man Magazine" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/P/MPAME075_0.jpg" alt="Spider-Man Magazine"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpame075-it-panini-comics-mega-panini-comics-mega-spider-man-mag-10.html" title="Spider-Man Magazine">
+                                    Spider-Man Magazine                                    &nbsp;                                        &nbsp;
+                                        10                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Comics Mega
+                                                                        &nbsp; 75                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                28/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73644" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73644">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73644">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73644/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73644/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mtart042-it-tartarughe-ninja-tartarughe-ninja-n-42.html" title="Teenage Mutant Ninja Turtles Magazine" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/T/MTART042_0.jpg" alt="Teenage Mutant Ninja Turtles Magazine"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mtart042-it-tartarughe-ninja-tartarughe-ninja-n-42.html" title="Teenage Mutant Ninja Turtles Magazine">
+                                    Teenage Mutant Ninja Turtles Magazine                                    &nbsp;                                        &nbsp;
+                                        42                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Tartarughe Ninja
+                                                                        &nbsp; 42                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                28/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73640" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73640">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73640">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73640/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73640/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpagi017-it-panini-girls-ladybug-n-17.html" title="Miraculous – Le Storie di Ladybug e Chat Noir" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Miraculous – Le Storie di Ladybug e Chat Noir"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpagi017-it-panini-girls-ladybug-n-17.html" title="Miraculous – Le Storie di Ladybug e Chat Noir">
+                                    Miraculous – Le Storie di Ladybug e Chat Noir                                    &nbsp;                                        &nbsp;
+                                        17                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Girls
+                                                                        &nbsp; 17                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                15/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73642" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73642">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73642">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73642/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73642/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mblok027-it-panini-blocks-panini-blocks-n-27.html" title="LEGO Ninjago" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="LEGO Ninjago"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mblok027-it-panini-blocks-panini-blocks-n-27.html" title="LEGO Ninjago">
+                                    LEGO Ninjago                                    &nbsp;                                        &nbsp;
+                                        27                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Blocks
+                                                                        &nbsp; 27                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                14/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73648" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73648">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73648">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73648/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73648/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/1wspid058-it-spiderman-magazine-spider-man-magazine-n-58.html" title="Spider-Man &amp; i suoi fantastici amici" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/1/W/1WSPID058_0.jpg" alt="Spider-Man &amp; i suoi fantastici amici"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/1wspid058-it-spiderman-magazine-spider-man-magazine-n-58.html" title="Spider-Man &amp; i suoi fantastici amici">
+                                    Spider-Man &amp; i suoi fantastici amici                                    &nbsp;                                        &nbsp;
+                                        58                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Spider-man & i Suoi Fantastici Amici
+                                                                        &nbsp; 58                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                10/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73599" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73599">
+                    € 3,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73599">
+                    € 3,51                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Non disponibile" class="button btn disabled btn-cart btn-outstock">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>Non disponibile</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73599/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mwarn055-it-panini-kids-panini-kids-scooby-doo-n-55.html" title="Scooby-Doo!" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/W/MWARN055_0.jpg" alt="Scooby-Doo!"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mwarn055-it-panini-kids-panini-kids-scooby-doo-n-55.html" title="Scooby-Doo!">
+                                    Scooby-Doo!                                    &nbsp;                                        &nbsp;
+                                        55                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Kids
+                                                                        &nbsp; 55                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                07/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73641" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73641">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73641">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73641/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73641/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item ">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/msupa009-it-super-panini-super-panini-lego-movie-ii-01.html" title="Lego Movie II" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/no-photo_265x265.jpg" alt="Lego Movie II"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/msupa009-it-super-panini-super-panini-lego-movie-ii-01.html" title="Lego Movie II">
+                                    Lego Movie II                                    &nbsp;                                        &nbsp;
+                                        1                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Super Panini
+                                                                        &nbsp; 9                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                07/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73639" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73639">
+                    € 5,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73639">
+                    € 5,31                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Aggiungi al carrello" class="button btn btn-cart btnActive btnHiAction" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/checkout/cart/add/uenc/aHR0cDovL2NvbWljcy5wYW5pbmkuaXQvc3RvcmUvcHViX2l0YV9pdC9tYWdhemluZXMvcC1tYWdzLmh0bWw,/product/73639/form_key/BLcvxccgHkIr7YDN/')">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span> Aggiungi al carrello</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73639/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="list-group-item row item  last">
+                        <div class="col-md-3">
+                                                        <a href="http://comics.panini.it/store/pub_ita_it/mpasp026-it-panini-space-panini-space-lego-star-wars-26.html" title="LEGO Star Wars" class="product-image">
+                                <img class="img-thumbnail img-responsive" src="http://comics.panini.it/store/media/catalog/product/cache/80/small_image/200x/9df78eab33525d08d6e5fb8d27136e95/M/P/MPASP026_0.jpg" alt="LEGO Star Wars"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                                                        <h3 class="product-name">
+                                <a href="http://comics.panini.it/store/pub_ita_it/mpasp026-it-panini-space-panini-space-lego-star-wars-26.html" title="LEGO Star Wars">
+                                    LEGO Star Wars                                    &nbsp;                                        &nbsp;
+                                        26                                                                    </a>
+                                                                                                                                <small class="serie">
+                                    Panini Space
+                                                                        &nbsp; 26                                </small>
+                                                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pnn-attributes">
+
+                                                                                                                            <h4 class="publication-date" data-type="sell-date">
+                                                07/02/2019                                            </h4>
+                                        
+                                    </div>
+                                    <div class="product-desc">
+                                                                                    <div class="ratings">&nbsp;</div>
+                                                                                <div class="price" id="amlabel-product-price-73647" style="display:none"></div>
+
+        
+    <div class="price-box">
+                                
+                    <p class="old-price">
+                <span class="price" id="old-price-73647">
+                    € 4,90                </span>
+                            </p>
+
+                        <p class="special-price">
+                <span class="price" id="product-price-73647">
+                    € 4,41                </span>
+            </p>
+                    
+    
+        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="actions text-center">
+                                        <div class="btn-group-vertical">
+                                                                                                                                        <button type="button" title="Non disponibile" class="button btn disabled btn-cart btn-outstock">
+                                                    <i class="fa fa-times"></i>
+                                                    <span>Non disponibile</span>
+                                                </button>
+                                                                                                                                        <button title="Aggiungi alla Wishlist" onclick="setLocation('http://comics.panini.it/store/pub_ita_it/wishlist/index/add/product/73647/form_key/BLcvxccgHkIr7YDN/')" class="btn btn-wishlist link-wishlist">
+                                                    <i class="fa fa-star"></i> <span>Aggiungi alla Wishlist</span>
+                                                </button>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+            <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+
+        
+        <div class="toolbar-bottom">
+                <div class="panel panel-pager">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <form class="limiter navbar-form navbar-left">
+                    <label>Mostra</label> <select onchange="setLocation(this.value)">
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=5">
+                                5                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=10">
+                                10                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=15">
+                                15                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=20">
+                                20                            </option>
+                                                    <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?limit=25" selected="selected">
+                                25                            </option>
+                                            </select> per pagina                </form>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="list-pager navbar-left">
+                    <span class="navbar-text">Pagina:</span>
+                    
+    
+    
+    
+        <!-- div class="pages" -->
+        <!-- strong>Pagina:</strong -->
+        <ul class="pagination pagination-sm">
+        
+        
+        
+                                    <li class="current"><a href="#" class="disabled">1</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=2">2</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=3">3</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=4">4</a></li>
+                                                <li><a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=5">5</a></li>
+                    
+        
+        
+                    <li>
+                <a class="next i-next" href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?p=2" title="Successivo">
+                                            <i class="fa fa-angle-right" alt="Successivo"></i>
+                                    </a>
+            </li>
+                </ul>
+
+    <!-- /div -->
+    
+    
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                                    <form class="navbar-form navbar-right">
+                                                    <p class="view-mode">
+                                                                                            </p>
+                                                <div class="sort-by">
+                                                        <label>Ordina per</label>
+                            <select onchange="setLocation(this.value)">
+                                                                                                                                              
+                                                                                                                                                  <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=name">
+                                            Titolo                                        </option>
+                                                                          
+                                                                                                                                                  <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=price">
+                                            Prezzo                                        </option>
+                                                                          
+                                                                                                                                                  <option value="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=pnn_data_uscita" selected="selected">
+                                            Data di uscita                                        </option>
+                                                                          
+                                                            </select>
+                                                            <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?dir=asc&amp;order=pnn_data_uscita" title="Imposta ordine ascendente">
+                                    <i class="fa fa-lg fa-fw fa-chevron-circle-down"></i>
+                                    <span class="sr-only">Imposta ordine ascendente</span>
+                                    <!-- img src="http://comics.panini.it/store/skin/frontend/base/default/images/i_desc_arrow.gif" alt="Imposta ordine ascendente" class="v-middle"/ -->
+                                </a>
+                                                    </div>
+                    </form>
+                            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-center">
+                                    Articoli da 1 a 25 di 575 totali                            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+<!-- CATEGORY DATA LAYER -->
+                    </div>
+                    <div class="col-right col-md-3 sidebar"><div class="block block-categories-nav panel panelComics">
+
+    <div class="panel-heading">
+        <h5 class="block-title panel-title">Categorie</h5>
+    </div>
+    <!-- div class="block-content" -->
+    <ul class="categories-nav first-level list-group">
+        <li class="list-group-item">
+              <a href="http://comics.panini.it/store/pub_ita_it/magazines.html">
+                  <i class="fa fa-angle-right"></i> <span>Comics, Manga, Riviste</span>
+              </a>
+
+                            
+        <ul class="categories-nav second-level list-group">
+        <!-- Mage_Catalog_Block_Navigation -->
+                               <li class="list-group-item">
+                <a href="http://comics.panini.it/store/pub_ita_it/magazines/cmc-m.html">
+                    <i class="fa fa-angle-right"></i> <span>Marvel</span>
+                </a>
+
+                            </li>
+                                           <li class="list-group-item">
+                <a href="http://comics.panini.it/store/pub_ita_it/magazines/manga.html">
+                    <i class="fa fa-angle-right"></i> <span>Planet Manga</span>
+                </a>
+
+                            </li>
+                                           <li class="list-group-item">
+                <a href="http://comics.panini.it/store/pub_ita_it/magazines/comics.html">
+                    <i class="fa fa-angle-right"></i> <span>Panini Comics</span>
+                </a>
+
+                            </li>
+                                           <li class="list-group-item">
+                <a href="http://comics.panini.it/store/pub_ita_it/magazines/cmc-d.html">
+                    <i class="fa fa-angle-right"></i> <span>Panini Disney</span>
+                </a>
+
+                            </li>
+                                           <li class="list-group-item">
+                <a href="http://comics.panini.it/store/pub_ita_it/magazines/9l.html">
+                    <i class="fa fa-angle-right"></i> <span>Panini 9L</span>
+                </a>
+
+                            </li>
+                                           <li class="list-group-item current">
+                <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html">
+                    <i class="fa fa-caret-down"></i> <span>Panini Magazines</span>
+                </a>
+
+                                                                                    </li>
+                            </ul>
+            
+    </li>
+    
+    
+        <li class="list-group-item">
+              <a href="http://comics.panini.it/store/pub_ita_it/in-promozione.html">
+                  <i class="fa fa-angle-right"></i> <span>In promozione</span>
+              </a>
+
+    
+    
+        <!-- /div -->
+</div>
+<div class="block block-layered-nav panel panelComics">
+    <div class="panel-heading">
+        <h5 class="block-title panel-title">Compra per</h5>
+    </div>
+
+    
+                <div id="narrow-by-list">
+                                                            
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Acquistabile        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                371            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_layered_available=761180">
+                                        No                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                204            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_layered_available=761179">
+                                        Sì                    </a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Prezzo        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                504            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?price=-5">
+                                        <span class="price">€ 0,00</span> - <span class="price">€ 4,99</span>                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                53            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?price=5-10">
+                                        <span class="price">€ 5,00</span> - <span class="price">€ 9,99</span>                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                13            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?price=10-15">
+                                        <span class="price">€ 10,00</span> - <span class="price">€ 14,99</span>                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                4            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?price=15-20">
+                                        <span class="price">€ 15,00</span> - <span class="price">€ 19,99</span>                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?price=30-">
+                                        <span class="price">€ 30,00</span> e oltre                    </a>
+            </li>
+</ul>
+                                                                                            
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Collana libreria        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                20            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_collana_libreria=762561">
+                                        Il Mio Primo Fumetto                    </a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Rilegatura        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                59            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_rilegatura=760730">
+                                        Brossurato                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                478            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_rilegatura=760732">
+                                        Spillato                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                32            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_rilegatura=760733">
+                                        Cartonato                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                1            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_rilegatura=760734">
+                                        Cartonato con sovraccoperta                    </a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Genere        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                75            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_genere=760735">
+                                        Eroi Marvel                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                2            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_genere=760736">
+                                        Azione                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                8            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_genere=760739">
+                                        Fantasy                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                21            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_genere=760740">
+                                        Fantascienza                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                2            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_genere=760747">
+                                        Supereroi                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                2            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_genere=760749">
+                                        Sportivo                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                2            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_genere=760756">
+                                        Western                    </a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Tipologia        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                17            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_tipologia=760757">
+                                        Altro                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                60            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_tipologia=760759">
+                                        Fumetto                    </a>
+            </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                464            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_tipologia=760761">
+                                        Magazine                    </a>
+            </li>
+</ul>
+                                                                
+<ul class="list-group">
+    <li class="list-group-item">
+        <h5 class="list-group-item-heading">
+            <i class="fa fa-fw fa-toggle-on"></i> Interni        </h5>
+    </li>
+    <li class="list-group-item">
+                    <span class="badge pull-right">
+                571            </span>
+                        <a href="http://comics.panini.it/store/pub_ita_it/magazines/p-mags.html?pnn_interni=760763">
+                                        Colori                    </a>
+            </li>
+</ul>
+                                    </div>
+        <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+    
+</div>
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+<!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+  
+<!-- ESI END DUMMY COMMENT [] -->
+</div>
+                </section>
+            </div>
+        </div>
+<!-- /div -->
+ <footer class="fluid-container"> 
+	<div class="footerInner"> <hr class="bottomLine" /> 
+		<div class="container"> 
+			<div class="special-menu line-top"><span class="sub first"> <a href="http://comics.panini.it/chi-siamo/" title="Company" class="sub first">Chi siamo</a> </span> <span class="sub"> <a href="http://comics.panini.it/servizio-clienti/" title="Customer Service" class="sub">Servizio Clienti</a> </span> <span> <a href="http://comics.panini.it/come-raggiungerci/" title="Come raggiungerci">Come raggiungerci</a> </span> <span> <a href="http://www.panini4professionals.com/PressArea/it/SezioneUtente.jsp?Action=RichiediAccredito&Id=2" title="Press Area">Press Area</a> </span> <span> <a href="http://www.uomoragno.it" title="Uomo Ragno" target="_blank">Uomo Ragno</a> </span> <span class="last"> <a href="http://www.rat-man.com/site/IT/IT/home.ashx" title="Rat-Man" class="last" target="_blank">Rat-Man</a> </span></div>
+			 
+			<div id="payment-methods" class="fluid-container"> 
+				<div class="container payment-wrapper"> 
+					<div class="row"> 
+						<div id="paypal" class="col-xs-6 col-sm-3 col-sm-offset-3 text-right"> <a href="https://www.paypal.com/it/webapps/mpp/paypal-popup" title="Come funziona PayPal?" onclick="javascript:window.open('https://www.paypal.com/it/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"> <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-150px.png" border="0" alt="PayPal Logo"> </a> </div>
+						 
+						<div id="postfinance" class="col-xs-6 col-sm-3 text-left"> <a href="https://www.postfinance.ch/it/cust/secure/onlinesec.html" title="Come funziona PostFinance" onclick="javascript:window.open('https://www.postfinance.ch/it/cust/secure/onlinesec.html','WIPostFinance','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"> <img border="0" alt="PostFinance Logo" src="http://comics.panini.it/typo3temp/_processed_/csm_PostFinancePayments_10c320c9cc.gif" width="168" height="60" /> </a> </div>
+						 </div>
+					 </div>
+				 </div>
+			 
+			<div class="bottomLegals"> 
+				<div class="mainContents"> 
+					<div id="pnn-footer"></div>
+					 
+					<script type="text/javascript">
+            var locale = "it-it";
+            var type = "pnnsb";
+            var format = "html";
+        </script>
+					
+					<script type="text/javascript" src="http://legals.paninicloud.com/legals.inject.js"></script>
+					<hr class="footerLine" /> </div>
+				 
+				<div class="sideContents"> 
+					<div class="diclaimerLegal-content"> <p>Tutto il materiale coperto da copyright è usato a scopi informativi e comunque nel rispetto dei contratti di Licenza in essere.</p> </div>
+					 <hr class="footerLine" /> 
+					<div class="bt-row social-content"> <a href="https://www.facebook.com/PaniniComics" target="_blank" title="Panini Facebook official page"> <i class="fa fa-fw fa-2x fa-facebook"></i><span class="sr-only">Facebook</span> </a> <a href="https://twitter.com/PaniniComicsIT" target="_blank" title="Panini Twitter official page"> <i class="fa fa-2x fa-twitter"></i><span class="sr-only">Twitter</span> </a> <a href="https://www.instagram.com/panini_comics/" target="_blank" title="Panini Instagram official page"> <i class="fa fa-2x fa-instagram"></i><span class="sr-only">Instagram</span> </a> <a href="https://www.youtube.com/user/Paninicomics" target="_blank" title="Panini YouTube official channel"> <i class="fa fa-2x fa-youtube"></i><span class="sr-only">YouTube</span> </a> </div>
+					 </div>
+				 </div>
+			 </div>
+		 </div>
+	 </footer> <!-- ESI START DUMMY COMMENT [] -->
+<!-- ESI URL DUMMY COMMENT -->
+
+ 
+
+ 
+<!-- ESI END DUMMY COMMENT [] -->
+<script type="text/javascript">
+    var amlabel_selector = '.product-image';
+    </script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5190203082","applicationID":"53882203","transactionName":"YVwBbEMEXEVQUE0MW1gWIltFDF1YHlBYEVVaVgQXUgRGU1ZcSxwbQFAGTw==","queueTime":0,"applicationTime":893,"atts":"TRsCGgseT0s=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
