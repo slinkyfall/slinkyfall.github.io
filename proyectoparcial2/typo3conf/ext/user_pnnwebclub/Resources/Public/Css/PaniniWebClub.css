@@ -1,0 +1,141 @@
+
+textarea.f3-form-error {
+    background-color:#FF9F9F;
+    border: 1px #FF0000 solid;
+}
+
+input.f3-form-error {
+    background-color:#FF9F9F;
+    border: 1px #FF0000 solid;
+}
+
+.tx-user-pnnwebclub table {
+    border-collapse:separate;
+    border-spacing:10px;
+}
+
+.tx-user-pnnwebclub table th {
+    font-weight:bold;
+}
+
+.tx-user-pnnwebclub table td {
+    vertical-align:top;
+}
+
+input.field-wrong {
+    background-color:#FF9F9F;
+}
+
+input.field-duplicated {
+    background-color:#FECE9F;
+}
+
+div.paginate {
+    border:solid black 1px; 
+    border-radius:5px;
+}
+
+a.tx-userpnnwebclub-filter {
+    cursor: pointer;   
+}
+
+div.tx-userpnnwebclub-filter p{
+    text-align:left; 
+    font-size: 14px; 
+    font-weight: bold; 
+    padding-top: 16px; 
+    display:block 
+}
+
+.f3-widget-paginator{
+    margin-left:2px;
+    line-height:20px; 
+    width:20px; 
+    font-size:11px; 
+    cursor:pointer;
+    display: inline;
+}
+.current, .next, .prev, .f3-widget-paginator li{
+    width:auto; 
+    line-height:10px; 
+    float: left;
+    padding: 0 0 0 2px; 
+    position: relative; 
+    top: 3px;
+    list-style-type: none;
+}
+
+.stickers .list-group-item ul {
+    columns: 2;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.stickers .list-group-item li {
+    display:inline-block;
+    margin: 0 0 10px;
+    padding: 0;
+    min-height: 20px;
+    padding-right: 20px;
+}
+
+input.sticker {
+    width: 30px;
+    margin-right: 5px;
+
+}
+
+input.increment {
+    margin-left: 5px;
+}
+
+input.decrement {
+    margin-right: 5px;
+}
+
+.categories .category {
+    display:inline-block;
+    margin: 0 0 10px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+div.active {
+    font-weight: bold;
+    color: #bc0000;
+}
+
+div.typo3-message {
+    line-height:2.429;
+    padding-left: 5px;
+    /*border-radius: 5px;*/
+}
+div.message-ok {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+div.message-warning {
+    background-color: #fff468;
+    border-color: #ffd54e;
+    color: #8a6d3b;
+}
+
+div.message-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #bc0000;
+}
+
+div.message-notice,div.message-information {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+input.wrong-field {
+    color:#FF0000;  /* red */
+}
